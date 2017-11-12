@@ -12,9 +12,9 @@ var botID = process.env.BOTID;
 //=============================================================
 
 // post to https://api.groupme.com/v3/bots/post 
-function response(res){
+function respond(res){
     console.log("this is: " + this);
-    if(body.name === "Danny perez"){
+    if(this.body.name === "Danny perez"){
         axios.post('https://api.groupme.com/v3/bots/post', {
             "bot_id"  : botID,
             "text"    : "Hello world"
@@ -29,4 +29,4 @@ function response(res){
     }
   }
   
-  exports.botMessage = botMessage;
+  exports.respond = respond;
