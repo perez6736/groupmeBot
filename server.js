@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // put text  on the html page. 
 app.get("/", function(req, res) {
-  res.send("testing!");
+  res.send("This is the groupme bot!");
 });
 
 // gets the groupme response when sommething is posted on groupme 
@@ -29,7 +29,6 @@ app.post("/", function(req, res){
 
   // post something to the group when someone types something to the group. 
   bot.respond(res, req.body);
-
 
 });
 

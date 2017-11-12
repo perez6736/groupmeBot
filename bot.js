@@ -23,15 +23,21 @@ function respond(res, requestBody){
     axiosMessage("Hello World.", res);
 
     if(requestBody.text.substring(0,2) === ".g"){
-      googleURL(requestBody.text.substring(3));
+      googleURL(requestBody.text.substring(3), res);
     }
   }
 
 }
-
-function googleURL(searchQuery){
+// builds a google search link using the users input 
+function googleURL(searchQuery, res){
+  searchQuery = searchQuery.trim();
   var formattedQuery = searchQuery.split(' ').join('+');
+  var googleLink = "https://www.google.com/search?q=";
+  var completeLink = googleLink + formattedQuery;
+
   console.log(formattedQuery);
+
+  axiosMessage(completeLink, res);
 }
 
 
