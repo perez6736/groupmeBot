@@ -23,7 +23,7 @@ function respond(res, requestBody){
     axiosMessage("Hello World.", res);
 
     if(requestBody.text.substring(0,2) === ".g"){
-      googleURL(requestBody.text.substring(0,3));
+      googleURL(requestBody.text.substring(3));
     }
   }
 
