@@ -18,6 +18,7 @@ function respond(res, requestBody){
 
   console.log(requestBody.text.substring(0,1));
 
+  // if the user is not the bot do something 
   if(requestBody.user_id != "557959"){
     axiosMessage("Hello World.", res);
   }
