@@ -15,7 +15,9 @@ var botID = process.env.BOTID;
 
 // maybe ask for the response as a parameter so we can do stuff on this js file instead of the server one. 
 function respond(res, requestBody){
-  axiosMessage("Hello World.");
+  if(requestBody.user_id != "557959"){
+    axiosMessage("Hello World.");
+  }
 }
 
 function axiosMessage(message){
