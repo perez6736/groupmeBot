@@ -16,18 +16,15 @@ var botID = process.env.BOTID;
 // maybe ask for the response as a parameter so we can do stuff on this js file instead of the server one. 
 function respond(res, requestBody){
 
-  console.log(requestBody.text.substring(0,2));
-
   // if the user is not the bot do something 
   if(requestBody.user_id != "557959"){
-    axiosMessage("Hello World.", res);
 
     if(requestBody.text.substring(0,2) === ".g"){
       googleURL(requestBody.text.substring(3), res);
     }
   }
-
 }
+
 // builds a google search link using the users input 
 function googleURL(searchQuery, res){
   searchQuery = searchQuery.trim();
@@ -35,12 +32,8 @@ function googleURL(searchQuery, res){
   var googleLink = "https://www.google.com/search?q=";
   var completeLink = googleLink + formattedQuery;
 
-  console.log(formattedQuery);
-
   axiosMessage(completeLink, res);
 }
-
-
 
 function axiosMessage(message, res){
   axios.post('https://api.groupme.com/v3/bots/post', {
