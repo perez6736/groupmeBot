@@ -10,7 +10,7 @@ var config_keys = require("./config_keys.js");
 // config variables
 //=============================================================
 
-var botID = config_keys.bot.bot_id;
+var botID = process.env.BOTID || config_keys.bot.bot_id;
 
 // Sets up the Express App
 // =============================================================
