@@ -1,0 +1,26 @@
+{
+  "name": "groupmeBot",
+  "version": "1.0.0",
+  "description": "A bot that sends messages to groupme channel",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perez6736/groupmeBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perez6736/groupmeBot/issues"
+  },
+  "homepage": "https://github.com/perez6736/groupmeBot#readme",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
