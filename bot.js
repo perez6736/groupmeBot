@@ -17,19 +17,31 @@ var botID = process.env.BOTID;
 function respond(res, requestBody){
 
   // make seperate methods that do checks like these so organize things a bit more. 
-    if(requestBody.name === "Danny perez"){
-        axios.post('https://api.groupme.com/v3/bots/post', {
-            "bot_id"  : botID,
-            "text"    : "Hello world"
-          })
-          .then(function (response) {
-            res.json("post completed from app.")
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+    if(requestBody.text.substring(0,1) === ".g"){
+        googleSearch(requestBody.text.substring(3));
     }
+  }
+
+  function googleSearch(searchQuery){
+    // put a + where the spaces were for the google link
+    var queryForGoogleLink = searchQuery.split(' ').join('+');
+
+    axiosPost("https://www.google.com/search?q=" + queryForGoogleLink);
+  }
+
+  // call this funtion to post a message.
+  function axiosPost(message){
+    axios.post('https://api.groupme.com/v3/bots/post', {
+      "bot_id"  : botID,
+      "text"    : message
+    })
+    .then(function (response) {
+      res.json("post completed from app.")
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   
   exports.respond = respond;
