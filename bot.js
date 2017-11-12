@@ -15,12 +15,16 @@ var botID = process.env.BOTID;
 
 // maybe ask for the response as a parameter so we can do stuff on this js file instead of the server one. 
 function respond(res, requestBody){
+
+  console.log(requestBody.text.substring(0,1));
+
   if(requestBody.user_id != "557959"){
-    axiosMessage("Hello World.");
+    axiosMessage("Hello World.", res);
   }
+
 }
 
-function axiosMessage(message){
+function axiosMessage(message, res){
   axios.post('https://api.groupme.com/v3/bots/post', {
     "bot_id"  : botID,
     "text"    : message
