@@ -31,7 +31,7 @@ function respond(res, requestBody){
 
 function googleURL(searchQuery){
   var formattedQuery = searchQuery.split(' ').join('+');
-  console.log(searchQuery);
+  console.log(formattedQuery);
 }
 
 
