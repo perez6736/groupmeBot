@@ -4,12 +4,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var morgan = require('morgan');
-var axios = require('axios');
+var bot = require('./bot.js');
 
-// config variables
-//=============================================================
-
-var botID = process.env.BOTID;
 
 // Sets up the Express App
 // =============================================================
@@ -31,35 +27,13 @@ app.post("/", function(req, res){
   console.log("request recieved"); 
   console.log(req.body);
 
-  console.log("USER ID IS " + req.body.user_id);
-
+  // post something to the group when someone types something to the group. 
   if(req.body.name === "Danny perez"){
     console.log("danny posted. ");
-    botMessage();
+    bot.botMessage(res);
   }
 
 });
-
-// post something to the group when someone types something to the group. 
-// post to https://api.groupme.com/v3/bots/post 
-
-// try request axios or fetch to post to the url. 
-function botMessage(){
-  axios.post('https://api.groupme.com/v3/bots/post', {
-    "bot_id"  : botID,
-    "text"    : "Hello world"
-  })
-  .then(function (response) {
-    res.json("post completed from app.")
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
-
-
-
 
 // Starts the server to begin listening
 // =============================================================
