@@ -28,10 +28,8 @@ app.post("/", function(req, res){
   console.log(req.body);
 
   // post something to the group when someone types something to the group. 
-  if(req.body.name === "Danny perez"){
-    console.log("danny posted. ");
-    bot.botMessage(res);
-  }
+  bot.response(res);
+
 
 });
 
