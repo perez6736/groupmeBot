@@ -5,12 +5,11 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var morgan = require('morgan');
 var axios = require('axios');
-var config_keys = require("./config_keys.js");
 
 // config variables
 //=============================================================
 
-var botID = process.env.BOTID || config_keys.bot.bot_id;
+var botID = process.env.BOTID;
 
 // Sets up the Express App
 // =============================================================
