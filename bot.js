@@ -15,6 +15,8 @@ var botID = process.env.BOTID;
 
 // maybe ask for the response as a parameter so we can do stuff on this js file instead of the server one. 
 function respond(res, requestBody){
+
+  // make seperate methods that do checks like these so organize things a bit more. 
     if(requestBody.name === "Danny perez"){
         axios.post('https://api.groupme.com/v3/bots/post', {
             "bot_id"  : botID,
