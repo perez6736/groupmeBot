@@ -11,9 +11,7 @@ var botID = process.env.BOTID;
 //bot code
 //=============================================================
 
-// post to https://api.groupme.com/v3/bots/post 
-
-// maybe ask for the response as a parameter so we can do stuff on this js file instead of the server one. 
+// this is the method that gets called when a message comes to the groupme.  
 function respond(res, requestBody){
 
   // if the user is not the bot do something 
@@ -29,7 +27,10 @@ function respond(res, requestBody){
   }
 }
 
-// builds a google search link using the users input 
+//BOT COMMANDS 
+//===============================================================
+
+// builds a google search link using the user's input 
 function googleURL(searchQuery, res){
   searchQuery = searchQuery.trim();
   var formattedQuery = searchQuery.split(' ').join('+');
@@ -40,10 +41,15 @@ function googleURL(searchQuery, res){
 }
 
 // this will display all the commands the bot knows
+// add the ability to ask for help on certain commands. 
 function help (res){
-  var commands = [".g", "command1", "command2"]; 
+  var commands = [".g"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
+
+//axios function -- this makes the post request to group me to send the message. 
+// ===================================================================
+
 
 // this function posts the message to groupme. 
 function axiosMessage(message, res){
