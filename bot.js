@@ -22,6 +22,10 @@ function respond(res, requestBody){
     if(requestBody.text.substring(0,2) === ".g"){
       googleURL(requestBody.text.substring(3), res);
     }
+
+    if(requestBody.text === ".help"){
+      help(res);
+    }
   }
 }
 
@@ -33,6 +37,12 @@ function googleURL(searchQuery, res){
   var completeLink = googleLink + formattedQuery;
 
   axiosMessage(completeLink, res);
+}
+
+// this will display all the commands the bot knows
+function help (res){
+  var commands = [".g", "command1", "command2"];
+  axiosMessage(commands, res);
 }
 
 function axiosMessage(message, res){
