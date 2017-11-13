@@ -41,10 +41,11 @@ function googleURL(searchQuery, res){
 
 // this will display all the commands the bot knows
 function help (res){
-  var commands = [".g", "command1", "command2"];
-  axiosMessage(commands, res);
+  var commands = [".g", "command1", "command2"]; 
+  axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
 
+// this function posts the message to groupme. 
 function axiosMessage(message, res){
   axios.post('https://api.groupme.com/v3/bots/post', {
     "bot_id"  : botID,
@@ -57,7 +58,7 @@ function axiosMessage(message, res){
   })
   .catch(function (error) {
     console.log("error will go here" );
-    console.log(error);
+    //console.log(error);
   });
 }
   
