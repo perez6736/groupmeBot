@@ -57,7 +57,7 @@ function axiosMessage(message, res){
   })
   .catch(function (error) {
     console.log("error will go here" );
-    //console.log(error);
+    console.log(error);
   });
 }
   
