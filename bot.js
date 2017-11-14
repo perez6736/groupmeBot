@@ -43,7 +43,7 @@ function googleURL(searchQuery, res){
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (res){
-  var commands = [".g"]; 
+  var commands = [".g", ".help"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
 
