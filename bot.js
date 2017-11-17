@@ -64,7 +64,7 @@ function coinFlip(usersChoice, res){
     axiosMessage("You lossered! The coin flip was " + HorT + ".", res);
   }
 
-  if(usersChoice != "heads" || usersChoice != "tails"){
+  if(usersChoice != "heads" && usersChoice != "tails"){
     axiosMessage("Are you dumb? Pick heads or tails next time.", res);
   }
 }
