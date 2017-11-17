@@ -107,7 +107,7 @@ function coinFlip(usersChoice){
 
 function randomGif(gifTopic){
   //build URL 
-  var giphyURL = "api.giphy.com/v1/gifs/random?api_key=" + giphyKey;
+  var giphyURL = "api.giphy.com/v1/gifs/random" //+ giphyKey;
   var giphyResponse;
   
   //use the data.url from giphy response 
@@ -169,7 +169,11 @@ function axiosMessage(message){
 
 // get request to a url. 
 function axiosGetRequest(completeURL){
-  axios.get(completeURL)
+  axios.get(completeURL, {
+    params: {
+      api_key: giphyKey
+    }
+  })
 
   .then(function (response) {
     console.log(response);
