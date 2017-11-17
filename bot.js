@@ -45,6 +45,18 @@ function googleURL(searchQuery, res){
   axiosMessage(completeLink, res);
 }
 
+function fkm(res){
+  var randomchance = Math.floor(Math.random()*1000);
+
+  if(randomchance === 1){
+    axiosMessage("Fak Key", res);
+  }
+  
+  if(randomchance === 2){
+    axiosMessage("FKM", res);
+  }
+}
+
 function coinFlip(usersChoice, res){
   var coin = Math.floor(Math.random()*2);
   var HorT;
@@ -87,7 +99,7 @@ function help (res){
 
 
 
-//axios function -- this makes the post request to group me to send the message. 
+//axios functions -- this makes the post request to group me to send the message and will add some to make ajax calls. 
 // ===================================================================
 
 
