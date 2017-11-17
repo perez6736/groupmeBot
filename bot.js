@@ -82,6 +82,7 @@ function help (res){
 // - giphy giph 
 // - reddit posts 
 // - send a text message from groupme 
+// - keep cool guy 
 
 
 
