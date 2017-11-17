@@ -28,7 +28,7 @@ app.post("/", function(req, res){
   console.log(req.body);
 
   // post something to the group when someone types something to the group. 
-  bot.respond(res, req.body);
+  bot.respond(req.body);
 
 });
 
