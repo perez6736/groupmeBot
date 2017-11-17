@@ -18,6 +18,8 @@ function respond(res, requestBody){
   // if the user is not the bot do something 
   if(requestBody.user_id != "557959"){
 
+    fkm(res);
+
     if(requestBody.text.substring(0,2) === "/g"){
       googleURL(requestBody.text.substring(3), res);
     }
@@ -45,6 +47,7 @@ function googleURL(searchQuery, res){
   axiosMessage(completeLink, res);
 }
 
+// will randomly send a message saying fkm or fak key to the channel. 
 function fkm(res){
   var randomchance = Math.floor(Math.random()*1000);
 
