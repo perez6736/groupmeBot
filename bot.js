@@ -23,7 +23,9 @@ function respond(res, requestBody){
       googleURL(requestBody.text.substring(3), res);
     }
 
-    if(requestBody.text.substring(0,4).toLowerCase() === "/coin")
+    if(requestBody.text.substring(0,4).toLowerCase() === "/coin"){
+      coinFlip(requestBody.text.substring(5).trim().toLowerCase(), res);
+    }
 
     if(requestBody.text.trim().toLowerCase() === "/help"){
       help(res);
@@ -49,16 +51,24 @@ function coinFlip(usersChoice, res){
 
   // 0 heads and 1 is tails 
   if(coin === 1){
-
+    coin = "tails";
+  }
+  else{
+    coin ="heads";
   }
 
+  if(coin === usersChoice){
+    axiosMessage("You wonnered! The coin flip was " + coin + ".", res);
+  }
+  else{
+    axiosMessage("You lossered! The coin flip was " + coin + ".", res);
   }
 }
 
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (res){
-  var commands = [".g", ".help"]; 
+  var commands = ["/g", "/help", "/coin"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
 
