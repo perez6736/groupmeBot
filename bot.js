@@ -1,3 +1,5 @@
+import { request } from 'https';
+
 // Dependencies
 // =============================================================
 
@@ -17,11 +19,13 @@ function respond(res, requestBody){
   // if the user is not the bot do something 
   if(requestBody.user_id != "557959"){
 
-    if(requestBody.text.substring(0,2) === ".g"){
+    if(requestBody.text.substring(0,2) === "/g"){
       googleURL(requestBody.text.substring(3), res);
     }
 
-    if(requestBody.text === ".help"){
+    if(requestBody.text.substring(0,4).toLowerCase() === "/coin")
+
+    if(requestBody.text.trim().toLowerCase() === "/help"){
       help(res);
     }
   }
@@ -40,10 +44,21 @@ function googleURL(searchQuery, res){
   axiosMessage(completeLink, res);
 }
 
+function coinFlip(usersChoice, res){
+  var coin = Math.floor(Math.random()*2);
+
+  // 0 heads and 1 is tails 
+  if(coin === 1){
+
+  }
+
+  }
+}
+
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (res){
-  var commands = [".g"]; 
+  var commands = ["/g"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
 
