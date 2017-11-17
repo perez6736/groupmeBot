@@ -107,7 +107,7 @@ function coinFlip(usersChoice){
 
 function randomGif(gifTopic){
   //build URL 
-  var giphyURL = "127.0.0.1:80/api.giphy.com/v1/gifs/random?api_key=" + giphyKey;
+  var giphyURL = "api.giphy.com/v1/gifs/random?api_key=" + giphyKey;
   var giphyResponse;
   
   //use the data.url from giphy response 
