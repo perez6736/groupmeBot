@@ -178,6 +178,7 @@ function axiosGetRequest(completeURL){
 
   .catch(function (error) {
     console.log(error);
+    return error;
   });
 }
 
