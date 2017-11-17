@@ -31,7 +31,9 @@ function respond(res, requestBody){
       coinFlip(text.substring(5).trim().toLowerCase(), res);
     }
 
-    if()
+    if(text.toLowerCase() === "i love you bot"){
+      iLoveYouBot(res);
+    }
 
     if(text.trim().toLowerCase() === "/help"){
       help(res);
@@ -51,6 +53,14 @@ function googleURL(searchQuery, res){
 
   axiosMessage(completeLink, res);
 }
+
+function iLoveYouBot(res){
+  // array of possible responses 
+  var responseForILoveYouArray = ["kys", "I love you too, " + name, "You have the face only a mother can love.", "Weet head"];
+  var responseForILoveYou = responseForILoveYouArray[Math.floor(Math.random()*responseForILoveYouArray.length)];
+  axiosMessage(responseForILoveYou, res);
+}
+
 
 // will randomly send a message saying fkm or fak key to the channel. 
 function fkm(res){
