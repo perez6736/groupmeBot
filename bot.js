@@ -93,7 +93,9 @@ function help (res){
 }
 
 // to add 
-// - random fkm
+// - define words 
+// - random fact
+// - weather? 
 // - damon spell checking 
 // - giphy giph 
 // - reddit posts 
