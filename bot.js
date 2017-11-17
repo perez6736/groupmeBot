@@ -32,7 +32,7 @@ function respond(res, requestBody){
     }
 
     if(text.toLowerCase() === "i love you bot"){
-      iLoveYouBot(res);
+      iLoveYouBot(name, res);
     }
 
     if(text.trim().toLowerCase() === "/help"){
@@ -54,7 +54,7 @@ function googleURL(searchQuery, res){
   axiosMessage(completeLink, res);
 }
 
-function iLoveYouBot(res){
+function iLoveYouBot(name, res){
   // array of possible responses 
   var responseForILoveYouArray = ["kys", "I love you too, " + name, "You have the face only a mother can love.", "Weet head"];
   var responseForILoveYou = responseForILoveYouArray[Math.floor(Math.random()*responseForILoveYouArray.length)];
