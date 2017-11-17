@@ -115,7 +115,8 @@ function randomGif(gifTopic){
   // if user just types gif send a random gif. 
   if(gifTopic === ""){
     giphyResponse = axiosGetRequest(giphyURL);
-    axiosMessage(giphyResponse.data.url);
+    console.log("giphy response here. ")
+    console.log(giphyResponse);
 
   }
 
@@ -177,7 +178,6 @@ function axiosGetRequest(completeURL){
 
   .catch(function (error) {
     console.log(error);
-    return error; 
   });
 }
 
