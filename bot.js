@@ -8,6 +8,7 @@ var axios = require('axios');
 //=============================================================
 
 var botID = process.env.BOTID;
+var giphyKey = process.env.GIPHY_KEY;
 
 //bot code
 //=============================================================
@@ -33,6 +34,10 @@ function respond(requestBody){
 
     if(text.toLowerCase() === "i love you bot"){
       iLoveYouBot(name);
+    }
+
+    if(text.substring(0,4).toLowerCase() === "/gif"){
+      randomGif(text.substring(5));
     }
 
     if(text.trim().toLowerCase() === "/help"){
@@ -100,6 +105,29 @@ function coinFlip(usersChoice){
   }
 }
 
+function randomGif(gifTopic){
+  //build URL 
+  var giphyURL = "api.giphy.com/v1/gifs/random?api_key=" + giphyKey;
+  var giphyResponse;
+  
+  //use the data.url from giphy response 
+
+  // if user just types gif send a random gif. 
+  if(gifTopic === ""){
+    giphyResponse = axiosGetRequest(giphyURL);
+    axiosMessage(giphyResponse.data.url);
+
+  }
+
+  else{
+    giphyURL = giphyURL+ "&tag=" + gifTopic;
+    giphyResponse = axiosGetRequest(giphyURL);
+    axiosMessage(giphyResponse.data.url); 
+  }
+  
+}
+
+
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (){
@@ -138,8 +166,21 @@ function axiosMessage(message){
   });
 }
 
-function axiosGetRequest(URL){
+// get request to a url. 
+function axiosGetRequest(completeURL){
+  axios.get(completeURL)
 
+  .then(function (response) {
+    console.log(response);
+    return response;
+  })
+
+  .catch(function (error) {
+    console.log(error);
+    return error; 
+  });
 }
+
+
   
   exports.respond = respond;
