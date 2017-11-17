@@ -23,7 +23,7 @@ function respond(res, requestBody){
     }
 
     if(requestBody.text.substring(0,4).toLowerCase() === "/coin"){
-      coinFlip(requestBody.text.substring(5).trim().toLowerCase(), res);
+      coinFlip(requestBody.text.substring(5).toLowerCase(), res);
     }
 
     if(requestBody.text.trim().toLowerCase() === "/help"){
