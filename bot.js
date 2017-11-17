@@ -22,8 +22,8 @@ function respond(res, requestBody){
       googleURL(requestBody.text.substring(3), res);
     }
 
-    if(requestBody.text.substring(0,4).toLowerCase() === "/coin"){
-      coinFlip(requestBody.text.substring(5).toLowerCase(), res);
+    if(requestBody.text.substring(0,5).toLowerCase() === "/coin"){
+      coinFlip(requestBody.text.substring(5).trim().toLowerCase(), res);
     }
 
     if(requestBody.text.trim().toLowerCase() === "/help"){
@@ -47,20 +47,25 @@ function googleURL(searchQuery, res){
 
 function coinFlip(usersChoice, res){
   var coin = Math.floor(Math.random()*2);
+  var HorT;
 
   // 0 heads and 1 is tails 
   if(coin === 1){
-    coin = "tails";
+    HorT = "tails";
   }
   else{
-    coin ="heads";
+    HorT ="heads";
   }
 
-  if(coin === usersChoice){
-    axiosMessage("You wonnered! The coin flip was " + coin + ".", res);
+  if(HorT === usersChoice){
+    axiosMessage("You wonnered! The coin flip was " + HorT + ".", res);
   }
   else{
-    axiosMessage("You lossered! The coin flip was " + coin + ".", res);
+    axiosMessage("You lossered! The coin flip was " + HorT + ".", res);
+  }
+
+  if(usersChoice != "heads" || usersChoice != "tails"){
+    axiosMessage("Are you dumb? Pick heads or tails next time.", res);
   }
 }
 
