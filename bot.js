@@ -15,20 +15,25 @@ var botID = process.env.BOTID;
 // this is the method that gets called when a message comes to the groupme.  
 function respond(res, requestBody){
 
+  var text = requestBody.text;
+  var name = requestBody.name;
+
   // if the user is not the bot do something 
-  if(requestBody.user_id != "557959"){
+  if(requestBody.sender_type != "bot"){
 
     fkm(res);
 
-    if(requestBody.text.substring(0,2) === "/g"){
-      googleURL(requestBody.text.substring(3), res);
+    if(text.substring(0,2) === "/g"){
+      googleURL(text.substring(3), res);
     }
 
-    if(requestBody.text.substring(0,5).toLowerCase() === "/coin"){
-      coinFlip(requestBody.text.substring(5).trim().toLowerCase(), res);
+    if(text.substring(0,5).toLowerCase() === "/coin"){
+      coinFlip(text.substring(5).trim().toLowerCase(), res);
     }
 
-    if(requestBody.text.trim().toLowerCase() === "/help"){
+    if()
+
+    if(text.trim().toLowerCase() === "/help"){
       help(res);
     }
   }
@@ -101,7 +106,6 @@ function help (res){
 // - reddit posts 
 // - send a text message from groupme 
 // - keep cool guy 
-
 
 
 //axios functions -- this makes the post request to group me to send the message and will add some to make ajax calls. 
