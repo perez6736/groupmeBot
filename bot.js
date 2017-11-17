@@ -49,23 +49,24 @@ function coinFlip(usersChoice, res){
   var coin = Math.floor(Math.random()*2);
   var HorT;
 
-  // 0 heads and 1 is tails 
-  if(coin === 1){
-    HorT = "tails";
-  }
-  else{
-    HorT ="heads";
-  }
-
-  if(HorT === usersChoice){
-    axiosMessage("You wonnered! The coin flip was " + HorT + ".", res);
-  }
-  else{
-    axiosMessage("You lossered! The coin flip was " + HorT + ".", res);
-  }
-
   if(usersChoice != "heads" && usersChoice != "tails"){
     axiosMessage("Are you dumb? Pick heads or tails next time.", res);
+  }
+  else{
+    // 0 heads and 1 is tails 
+    if(coin === 1){
+      HorT = "tails";
+    }
+    else{
+      HorT ="heads";
+    }
+
+    if(HorT === usersChoice){
+      axiosMessage("You wonnered! The coin flip was " + HorT + ".", res);
+    }
+    else{
+      axiosMessage("You lossered! The coin flip was " + HorT + ".", res);
+    }
   }
 }
 
