@@ -76,6 +76,15 @@ function help (res){
   axiosMessage("These are the bot commands: " + commands.join(', '), res);
 }
 
+// to add 
+// - random fkm
+// - damon spell checking 
+// - giphy giph 
+// - reddit posts 
+// - send a text message from groupme 
+
+
+
 //axios function -- this makes the post request to group me to send the message. 
 // ===================================================================
 
