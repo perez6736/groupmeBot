@@ -8,7 +8,7 @@ var giphyKey = process.env.GIPHY_KEY;
 // =============================================================
 
 var axios = require('axios');
-var giphy = require('giphy')(giphyKey);
+var giphy = require('giphy-api')(giphyKey);
 
 
 //bot code
@@ -119,9 +119,9 @@ function randomGif(gifTopic){
     // console.log("giphy response here. ")
     // console.log(giphyResponse);
 
-    giphy( { search : [ 'random' ]}, function(results){
-      console.log(results);
-    });
+    giphy.search('random', function (err,res){
+      console.log(res);
+    })
   }
 
   else{
@@ -129,7 +129,6 @@ function randomGif(gifTopic){
     // giphyResponse = axiosGetRequest(giphyURL);
     // axiosMessage(giphyResponse.data.url); 
 
-    giphy( { search : [ gifTopic ]}, handleGifs );
   }
   
 }
