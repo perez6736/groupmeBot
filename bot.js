@@ -164,7 +164,7 @@ function axiosMessage(message){
   })
   .catch(function (error) {
     console.log("error will go here" );
-    //console.log(error);
+    console.log(error);
   });
 }
 
