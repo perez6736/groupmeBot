@@ -115,19 +115,15 @@ function randomGif(gifTopic){
 
   // if user just types gif send a random gif. 
   if(gifTopic === ""){
-    // giphyResponse = axiosGetRequest(giphyURL);
-    // console.log("giphy response here. ")
-    // console.log(giphyResponse);
-
     giphy.random(function (err,res){
-      console.log(res);
+      axiosMessage(res.data.url);
     })
   }
 
   else{
-    // giphyURL = giphyURL+ "&tag=" + gifTopic;
-    // giphyResponse = axiosGetRequest(giphyURL);
-    // axiosMessage(giphyResponse.data.url); 
+    giphy.search(gifTopic, function (err,res){
+      axiosMessage(res.data.url);
+    })
 
   }
   
@@ -172,23 +168,6 @@ function axiosMessage(message){
   });
 }
 
-// // get request to a url. 
-// function axiosGetRequest(completeURL){
-//   axios.get(completeURL, {
-//     params: {
-//       api_key: giphyKey
-//     }
-//   })
-
-//   .then(function (response) {
-//     console.log(response);
-//     return response;
-//   })
-
-//   .catch(function (error) {
-//     console.log(error);
-//     return error;
-//   });
 // }
 
 
