@@ -126,7 +126,7 @@ function randomGif(gifTopic){
       q: gifTopic,
       limit: 1
     },
-      function (err, res)){
+      function (err, res){
         console.log(res);
       //axiosMessage(res.data.url);
     })
