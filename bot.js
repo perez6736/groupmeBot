@@ -1,14 +1,15 @@
-
-// Dependencies
-// =============================================================
-
-var axios = require('axios');
-
 // config variables
 //=============================================================
 
 var botID = process.env.BOTID;
 var giphyKey = process.env.GIPHY_KEY;
+
+// Dependencies
+// =============================================================
+
+var axios = require('axios');
+var giphy = require('giphy')(giphyKey);
+
 
 //bot code
 //=============================================================
@@ -24,8 +25,8 @@ function respond(requestBody){
 
     fkm();
 
-    if(text.substring(0,2) === "/g"){
-      googleURL(text.substring(3));
+    if(text.substring(0,7) === "/google"){
+      googleURL(text.substring(8));
     }
 
     if(text.substring(0,5).toLowerCase() === "/coin"){
@@ -114,16 +115,19 @@ function randomGif(gifTopic){
 
   // if user just types gif send a random gif. 
   if(gifTopic === ""){
-    giphyResponse = axiosGetRequest(giphyURL);
-    console.log("giphy response here. ")
-    console.log(giphyResponse);
+    // giphyResponse = axiosGetRequest(giphyURL);
+    // console.log("giphy response here. ")
+    // console.log(giphyResponse);
 
+    giphy.gifs( { search : [ 'random' ]}, handleGifs );
   }
 
   else{
-    giphyURL = giphyURL+ "&tag=" + gifTopic;
-    giphyResponse = axiosGetRequest(giphyURL);
-    axiosMessage(giphyResponse.data.url); 
+    // giphyURL = giphyURL+ "&tag=" + gifTopic;
+    // giphyResponse = axiosGetRequest(giphyURL);
+    // axiosMessage(giphyResponse.data.url); 
+
+    giphy.gifs( { search : [ gifTopic ]}, handleGifs );
   }
   
 }
@@ -132,7 +136,7 @@ function randomGif(gifTopic){
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (){
-  var commands = ["/g", "/help", "/coin"]; 
+  var commands = ["/google", "/help", "/coin"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '));
 }
 
@@ -167,18 +171,18 @@ function axiosMessage(message){
   });
 }
 
-// get request to a url. 
-function axiosGetRequest(completeURL){
-  axios.get(completeURL, {
-    params: {
-      api_key: giphyKey
-    }
-  })
+// // get request to a url. 
+// function axiosGetRequest(completeURL){
+//   axios.get(completeURL, {
+//     params: {
+//       api_key: giphyKey
+//     }
+//   })
 
-  .then(function (response) {
-    console.log(response);
-    return response;
-  })
+//   .then(function (response) {
+//     console.log(response);
+//     return response;
+//   })
 
   .catch(function (error) {
     console.log(error);
