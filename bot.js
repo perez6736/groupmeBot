@@ -115,16 +115,18 @@ function randomGif(gifTopic){
   }
 
   else{
-    console.log(gifTopic);
-    giphy.search(
-    {
-      q: gifTopic,
-      limit: 1
-    },
-      function (err, res){
-      console.log(res);
-      axiosMessage(res.data[0].url);
+    giphy.random(gifTopic, function (err,res){
+      axiosMessage(res.data.url);
     })
+    // giphy.search(
+    // {
+    //   q: gifTopic,
+    //   limit: 1
+    // },
+    //   function (err, res){
+    //   console.log(res);
+    //   axiosMessage(res.data[0].url);
+    // })
 
   }
   
