@@ -127,8 +127,8 @@ function randomGif(gifTopic){
       limit: 1
     },
       function (err, res){
-        console.log(res);
-      //axiosMessage(res.data.url);
+      console.log(res);
+      axiosMessage(res.data[0].url);
     })
 
   }
