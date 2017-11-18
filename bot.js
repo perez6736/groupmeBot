@@ -119,7 +119,7 @@ function randomGif(gifTopic){
     // console.log("giphy response here. ")
     // console.log(giphyResponse);
 
-    giphy.search('random', function (err,res){
+    giphy.random(function (err,res){
       console.log(res);
     })
   }
