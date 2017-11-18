@@ -119,7 +119,9 @@ function randomGif(gifTopic){
     // console.log("giphy response here. ")
     // console.log(giphyResponse);
 
-    giphy.gifs( { search : [ 'random' ]}, handleGifs );
+    giphy.gifs( { search : [ 'random' ]}, function(results){
+      console.log(results);
+    });
   }
 
   else{
