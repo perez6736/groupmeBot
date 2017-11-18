@@ -119,7 +119,7 @@ function randomGif(gifTopic){
     // console.log("giphy response here. ")
     // console.log(giphyResponse);
 
-    giphy.gifs( { search : [ 'random' ]}, function(results){
+    giphy( { search : [ 'random' ]}, function(results){
       console.log(results);
     });
   }
@@ -129,7 +129,7 @@ function randomGif(gifTopic){
     // giphyResponse = axiosGetRequest(giphyURL);
     // axiosMessage(giphyResponse.data.url); 
 
-    giphy.gifs( { search : [ gifTopic ]}, handleGifs );
+    giphy( { search : [ gifTopic ]}, handleGifs );
   }
   
 }
