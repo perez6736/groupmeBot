@@ -72,6 +72,8 @@ function iLoveYouBot(name){
 function fkm(){
   var randomchance = Math.floor(Math.random()*1000);
 
+  console.log("The random number was " + randomchance);
+
   if(randomchance === 1){
     axiosMessage("Fak Key");
   }
@@ -118,15 +120,6 @@ function randomGif(gifTopic){
     giphy.random(gifTopic, function (err,res){
       axiosMessage(res.data.url);
     })
-    // giphy.search(
-    // {
-    //   q: gifTopic,
-    //   limit: 1
-    // },
-    //   function (err, res){
-    //   console.log(res);
-    //   axiosMessage(res.data[0].url);
-    // })
 
   }
   
@@ -141,6 +134,7 @@ function help (){
 }
 
 // to add 
+// - dice with number of sides as a parameter 
 // - define words 
 // - random fact
 // - weather? 
@@ -169,8 +163,6 @@ function axiosMessage(message){
     //console.log(error);
   });
 }
-
-// }
 
 
   
