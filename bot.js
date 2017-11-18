@@ -121,8 +121,14 @@ function randomGif(gifTopic){
   }
 
   else{
-    giphy.search(gifTopic, function (err,res){
-      axiosMessage(res.data.url);
+    console.log(gifTopic);
+    giphy.search({
+      q: gifTopic,
+      limit: 1
+    },
+      function (err, res)){
+        console.log(res);
+      //axiosMessage(res.data.url);
     })
 
   }
@@ -164,7 +170,7 @@ function axiosMessage(message){
   })
   .catch(function (error) {
     console.log("error will go here" );
-    console.log(error);
+    //console.log(error);
   });
 }
 
