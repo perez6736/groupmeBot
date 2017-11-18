@@ -107,12 +107,6 @@ function coinFlip(usersChoice){
 }
 
 function randomGif(gifTopic){
-  //build URL 
-  var giphyURL = "api.giphy.com/v1/gifs/random" //+ giphyKey;
-  var giphyResponse;
-  
-  //use the data.url from giphy response 
-
   // if user just types gif send a random gif. 
   if(gifTopic === ""){
     giphy.random(function (err,res){
@@ -122,7 +116,8 @@ function randomGif(gifTopic){
 
   else{
     console.log(gifTopic);
-    giphy.search({
+    giphy.search(
+    {
       q: gifTopic,
       limit: 1
     },
@@ -148,7 +143,6 @@ function help (){
 // - random fact
 // - weather? 
 // - damon spell checking 
-// - giphy giph 
 // - reddit posts 
 // - send a text message from groupme 
 // - keep cool guy 
