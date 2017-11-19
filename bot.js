@@ -158,7 +158,7 @@ function threeDiceCiLo (){
   }
 
   //  The most efficient way is to sort first, then find if any two adjacent elements are equal:
-  for (i=0; i<sortedDiceRoll.length){
+  for (i=0; i<sortedDiceRoll.length; i++){
     if (sortedDiceRoll[i] === sortedDiceRoll[i+1]){
       // there was a pair that wasnt trips -- need to see which index was not the match. 
 
