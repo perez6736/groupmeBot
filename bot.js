@@ -25,7 +25,7 @@ function respond(requestBody){
 
     fkm();
 
-    if(text.substring(0,7) === "/google"){
+    if(text.substring(0,7).toLowerCase() === "/google"){
       googleURL(text.substring(8));
     }
 
@@ -39,6 +39,10 @@ function respond(requestBody){
 
     if(text.substring(0,4).toLowerCase() === "/gif"){
       randomGif(text.substring(5));
+    }
+
+    if(text.substring(0,9).toLowerCase() === "/cool guy"){
+      coolGuy();
     }
 
     if(text.trim().toLowerCase() === "/help"){
@@ -67,6 +71,9 @@ function iLoveYouBot(name){
   axiosMessage(responseForILoveYou);
 }
 
+function coolGuy(){
+  axiosMessage(cool());
+}
 
 // will randomly send a message saying fkm or fak key to the channel. 
 function fkm(){
