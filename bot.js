@@ -85,8 +85,6 @@ function coolGuy(){
 function fkm(){
   var randomchance = Math.floor(Math.random()*1000);
 
-  console.log("The random number was " + randomchance);
-
   if(randomchance === 1){
     axiosMessage("Fak Key");
   }
@@ -148,6 +146,8 @@ function threeDiceCiLo (){
   var diceRoll3 = diceRoll[2]; 
   // sort the array first then check each index 
   var sortedDiceRoll = diceRoll.sort(function(a, b){return a - b});
+
+  console.log(diceRoll); 
 
   // check to see if a 456 was rolled. 
   if(sortedDiceRoll[0] === 4 && sortedDiceRoll[1] === 5 && sortedDiceRoll[2] === 6){
