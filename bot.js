@@ -45,6 +45,10 @@ function respond(requestBody){
       coolGuy();
     }
 
+    if(text.substring(0,5).toLowerCase() === "/cilo"){
+      threeDiceCiLo();
+    }
+
     if(text.trim().toLowerCase() === "/help"){
       help();
     }
