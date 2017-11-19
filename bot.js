@@ -148,6 +148,7 @@ function threeDiceCiLo (){
   var sortedDiceRoll = diceRoll.sort(function(a, b){return a - b});
 
   console.log("The dice roll was: " + diceRoll); 
+  console.log("sorted version: " + sortedDiceRoll);
 
   // check to see if a 456 was rolled. 
   if(sortedDiceRoll[0] === 4 && sortedDiceRoll[1] === 5 && sortedDiceRoll[2] === 6){
