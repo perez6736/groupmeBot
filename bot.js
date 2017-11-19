@@ -164,6 +164,13 @@ function threeDiceCiLo (){
     return; 
   }
 
+  // check to see if a 456 was rolled. 
+  if(sortedDiceRoll[0] === 1 && sortedDiceRoll[1] === 2 && sortedDiceRoll[2] === 3){
+    // console.log("you rolled a 456");
+    axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 1 2 3 .. You Lost");
+    return; 
+  }
+
   //  The most efficient way is to sort first, then find if any two adjacent elements are equal:
   for (i=0; i<sortedDiceRoll.length; i++){
     if (sortedDiceRoll[i] === sortedDiceRoll[i+1]){
