@@ -147,19 +147,19 @@ function threeDiceCiLo (){
   // sort the array first then check each index 
   var sortedDiceRoll = diceRoll.sort(function(a, b){return a - b});
 
-  console.log("The dice roll was: " + diceRoll); 
-  console.log("sorted version: " + sortedDiceRoll);
+  // console.log("The dice roll was: " + diceRoll); 
+  // console.log("sorted version: " + sortedDiceRoll);
 
   // check to see if a 456 was rolled. 
   if(sortedDiceRoll[0] === 4 && sortedDiceRoll[1] === 5 && sortedDiceRoll[2] === 6){
-    console.log("you rolled a 456");
+    // console.log("you rolled a 456");
     axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 4 5 6 .. You Win");
     return; 
   }
 
   // check to see if trips were rolled. 
   if(sortedDiceRoll[0] === sortedDiceRoll[1] && sortedDiceRoll[0] === sortedDiceRoll[2]){
-    console.log("you rolled trips of " + sortedDiceRoll[0]); 
+    // console.log("you rolled trips of " + sortedDiceRoll[0]); 
     axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You rolled trips of " + sortedDiceRoll[0]); 
     return; 
   }
@@ -172,7 +172,7 @@ function threeDiceCiLo (){
       if(i === 0){
         //then the match was 0 and 1 
         score = sortedDiceRoll[2]
-        console.log("score was " + score);
+        // console.log("score was " + score);
         axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
         return;
 
@@ -180,7 +180,7 @@ function threeDiceCiLo (){
       else if (i === 1){
         //then the mmatch was 1 and 2 
         score = sortedDiceRoll[0]
-        console.log("score was " + score);
+        // console.log("score was " + score);
         axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
         return;
       }
@@ -188,8 +188,8 @@ function threeDiceCiLo (){
     }
   }
 
-  console.log(" no score roll again. ");
-  axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - No socre try rolling again." );
+  // console.log(" no score roll again. ");
+  axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - No score try rolling again." );
 
 }
 
@@ -197,7 +197,7 @@ function threeDiceCiLo (){
 // this will display all the commands the bot knows
 // add the ability to ask for help on certain commands. 
 function help (){
-  var commands = ["/google", "/help", "/coin", "/gif"]; 
+  var commands = ["/google", "/help", "/coin", "/gif", "/ciLo"]; 
   axiosMessage("These are the bot commands: " + commands.join(', '));
 }
 
