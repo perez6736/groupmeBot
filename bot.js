@@ -147,7 +147,7 @@ function threeDiceCiLo (){
   // sort the array first then check each index 
   var sortedDiceRoll = diceRoll.sort(function(a, b){return a - b});
 
-  console.log(diceRoll); 
+  console.log("The dice roll was: " + diceRoll); 
 
   // check to see if a 456 was rolled. 
   if(sortedDiceRoll[0] === 4 && sortedDiceRoll[1] === 5 && sortedDiceRoll[2] === 6){
@@ -188,7 +188,7 @@ function threeDiceCiLo (){
   }
 
   console.log(" no score roll again. ");
-  axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll2 + " - No socre try tolling again." );
+  axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll2 + " - No socre try rolling again." );
 
 }
 
