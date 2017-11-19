@@ -9,7 +9,8 @@ var giphyKey = process.env.GIPHY_KEY;
 
 var axios = require('axios');
 var giphy = require('giphy-api')(giphyKey);
-var chance = require('chance');
+var Chance = require('chance');
+var chance = new Chance();
 
 
 //bot code
