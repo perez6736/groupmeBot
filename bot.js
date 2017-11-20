@@ -136,10 +136,11 @@ function randomGif(gifTopic){
   
 }
 
+// this might have to be moved to its own js file. 
 function threeDiceCiLo (){
 
   var score;
-  //when some one says  /ci-lo we need to roll thress dice
+  //when some one says  /ci-lo we need to roll three dice
   var diceRoll = chance.rpg('3d6');
   var diceRoll1 = diceRoll[0];
   var diceRoll2 = diceRoll[1];
@@ -209,13 +210,14 @@ function help (){
 }
 
 // to add 
-// - dice with number of sides as a parameter 
+// - maybe move the features to new js files  of their own. 
 // - define words 
 // - random fact
 // - weather? 
 // - damon spell checking 
 // - reddit posts 
 // - send a text message from groupme 
+// - trivia game that can keep score in a trivia session. 
 
 
 //axios functions -- this makes the post request to group me to send the message and will add some to make ajax calls. 
