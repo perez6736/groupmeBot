@@ -52,6 +52,32 @@ function respond(requestBody){
       threeDiceCiLo();
     }
 
+    if(text.toLowerCase() === "/trivia quit"){
+      // turn the trivia flag to false so the method
+    }
+
+
+    if(text.substring(0,7).toLowerCase() === "/trivia"){
+      // generate a trivia question and we are going to store the question and answer in an object. 
+
+    }
+    // grab the answer from the object and check if the user answered correctly 
+    if(text === "trivia answer"){
+      // make a variable that flags if trivia is running or not. 
+      // check answer method. 
+      // check if someone got the correct answer and if someone did then we will clear the object (so no one gets points for answering it after)
+      // award a point to the user in a new object 
+      // print the score 
+      // check flag and generate new question. 
+
+      // set a timer
+      // when timer goes to 0 - clear the object with the answer and method.. print time has ran out
+      // check flag
+      // generate a new question 
+
+    }
+
+
     if(text.trim().toLowerCase() === "/help"){
       help();
     }
