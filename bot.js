@@ -9,6 +9,7 @@ var giphyKey = process.env.GIPHY_KEY;
 
 var axios = require('axios');
 var giphy = require('giphy-api')(giphyKey);
+var cool = require('cool-ascii-faces');
 var Chance = require('chance');
 var chance = new Chance();
 
