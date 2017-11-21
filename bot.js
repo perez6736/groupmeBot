@@ -130,7 +130,12 @@ function randomGif(gifTopic){
   else{
     giphy.random(gifTopic, function (err,res){
       console.log(res);
-      axiosMessage(res.data.url);
+      if(res.data.length === 0){
+        axiosMessage("Sorry. No gifs matching -" + gifTopic);
+      }
+      else{
+        axiosMessage(res.data.url);
+      }
     })
 
   }
