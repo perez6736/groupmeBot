@@ -129,6 +129,7 @@ function randomGif(gifTopic){
 
   else{
     giphy.random(gifTopic, function (err,res){
+      console.log(res);
       axiosMessage(res.data.url);
     })
 
@@ -236,7 +237,7 @@ function axiosMessage(message){
   })
   .catch(function (error) {
     console.log("error will go here" );
-    //console.log(error);
+    console.log(error);
   });
 }
 
