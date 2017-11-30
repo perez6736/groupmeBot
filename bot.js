@@ -12,6 +12,7 @@ var giphy = require('giphy-api')(giphyKey);
 var cool = require('cool-ascii-faces');
 var Chance = require('chance');
 var chance = new Chance();
+var googleSearch = require('./googleSearch.js');
 
 
 //bot code
@@ -29,7 +30,7 @@ function respond(requestBody){
     fkm();
 
     if(text.substring(0,7).toLowerCase() === "/google"){
-      googleURL(text.substring(8));
+     googleSearch(text.substring(8));
     }
 
     if(text.substring(0,5).toLowerCase() === "/coin"){
@@ -59,10 +60,11 @@ function respond(requestBody){
 
     if(text.substring(0,7).toLowerCase() === "/trivia"){
       // generate a trivia question and we are going to store the question and answer in an object. 
-
+      startTrivia();
     }
     // grab the answer from the object and check if the user answered correctly 
     if(text === "trivia answer"){
+
       // make a variable that flags if trivia is running or not. 
       // check answer method. 
       // check if someone got the correct answer and if someone did then we will clear the object (so no one gets points for answering it after)
@@ -87,15 +89,24 @@ function respond(requestBody){
 //BOT COMMANDS 
 //===============================================================
 
-// builds a google search link using the user's input 
-function googleURL(searchQuery){
-  searchQuery = searchQuery.trim();
-  var formattedQuery = searchQuery.split(' ').join('+');
-  var googleLink = "https://www.google.com/search?q=";
-  var completeLink = googleLink + formattedQuery;
+function startTrivia(){
+  // get a trivia question 
+  // store the question and answer in an object. 
+      // make a variable that flags if trivia is running or not. 
+      // check answer method. 
+      // check if someone got the correct answer and if someone did then we will clear the object (so no one gets points for answering it after)
+      // award a point to the user in a new object 
+      // print the score 
+      // check flag and generate new question. 
 
-  axiosMessage(completeLink);
+      // set a timer
+      // when timer goes to 0 - clear the object with the answer and method.. print time has ran out
+      // check flag
+      // generate a new question 
+
 }
+
+
 
 function iLoveYouBot(name){
   // array of possible responses 
@@ -259,22 +270,10 @@ function help (){
 // ===================================================================
 
 
-// this function posts the message to groupme. 
-function axiosMessage(message){
-  axios.post('https://api.groupme.com/v3/bots/post', {
-    "bot_id"  : botID,
-    "text"    : message
-  })
-  .then(function (response) {
-    console.log("response from axios goes here");
-    //console.log(response);
-  })
-  .catch(function (error) {
-    console.log("error will go here" );
-    console.log(error);
-  });
+
+
+function axiosGetTrivia(){
+  // make a get request to fetch a question
 }
-
-
   
-  exports.respond = respond;
+exports.respond = respond;
