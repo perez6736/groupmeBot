@@ -257,6 +257,7 @@ function help (){
 
 // to add 
 // - maybe move the features to new js files  of their own. 
+// create config file for bot id
 // - define words 
 // - random fact
 // - weather? 
