@@ -12,9 +12,9 @@ var giphy = require('giphy-api')(giphyKey);
 var cool = require('cool-ascii-faces');
 var Chance = require('chance');
 var chance = new Chance();
-var googleSearch = require('./googleSearch.js');
-var iLoveYouBot = require('./iloveyoubot.js'); 
-var fkm = require('./fkm.js');
+var googleSearch = require('./commands/googleSearch.js');
+var iLoveYouBot = require('./commands/iloveyoubot.js'); 
+var fkm = require('./commands/fkm.js');
 
 
 //bot code
