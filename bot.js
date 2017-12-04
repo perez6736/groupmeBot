@@ -9,12 +9,16 @@ var giphyKey = process.env.GIPHY_KEY;
 
 var axios = require('axios');
 var giphy = require('giphy-api')(giphyKey);
-var cool = require('cool-ascii-faces');
 var Chance = require('chance');
 var chance = new Chance();
+
+// Dependencies for commands 
+// ==============================================================
+
 var googleSearch = require('./commands/googleSearch.js');
 var iLoveYouBot = require('./commands/iloveyoubot.js'); 
 var fkm = require('./commands/fkm.js');
+var coolGuy = require('./commands/coolguy.js');
 
 
 //bot code
@@ -93,10 +97,6 @@ function startTrivia(){
       // check flag
       // generate a new question 
 
-}
-
-function coolGuy(){
-  axiosMessage(cool());
 }
 
 function coinFlip(usersChoice){
