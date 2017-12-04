@@ -1,4 +1,4 @@
-var axiospost = require('./axiosMessage.js');
+var axiosMessage = require('./axiosMessage.js');
 
 const googleSearch = // builds a google search link using the user's input 
     function googleURL(searchQuery){
@@ -7,7 +7,7 @@ const googleSearch = // builds a google search link using the user's input
     var googleLink = "https://www.google.com/search?q=";
     var completeLink = googleLink + formattedQuery;
 
-    axiospost(completeLink);
+    axiosMessage(completeLink);
 }
 
 module.exports = googleSearch; 

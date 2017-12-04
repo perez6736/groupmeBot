@@ -13,6 +13,8 @@ var cool = require('cool-ascii-faces');
 var Chance = require('chance');
 var chance = new Chance();
 var googleSearch = require('./googleSearch.js');
+var iLoveYouBot = require('./iloveyoubot.js'); 
+var fkm = require('./fkm.js');
 
 
 //bot code
@@ -57,25 +59,12 @@ function respond(requestBody){
       // turn the trivia flag to false so the method
     }
 
-
     if(text.substring(0,7).toLowerCase() === "/trivia"){
-      // generate a trivia question and we are going to store the question and answer in an object. 
+      
       startTrivia();
     }
-    // grab the answer from the object and check if the user answered correctly 
+    
     if(text === "trivia answer"){
-
-      // make a variable that flags if trivia is running or not. 
-      // check answer method. 
-      // check if someone got the correct answer and if someone did then we will clear the object (so no one gets points for answering it after)
-      // award a point to the user in a new object 
-      // print the score 
-      // check flag and generate new question. 
-
-      // set a timer
-      // when timer goes to 0 - clear the object with the answer and method.. print time has ran out
-      // check flag
-      // generate a new question 
 
     }
 
@@ -106,30 +95,8 @@ function startTrivia(){
 
 }
 
-
-
-function iLoveYouBot(name){
-  // array of possible responses 
-  var responseForILoveYouArray = ["kys", "I love you too, " + name, "You have the face only a mother can love.", "Weet head"];
-  var responseForILoveYou = responseForILoveYouArray[Math.floor(Math.random()*responseForILoveYouArray.length)];
-  axiosMessage(responseForILoveYou);
-}
-
 function coolGuy(){
   axiosMessage(cool());
-}
-
-// will randomly send a message saying fkm or fak key to the channel. 
-function fkm(){
-  var randomchance = Math.floor(Math.random()*1000);
-
-  if(randomchance === 1){
-    axiosMessage("Fak Key");
-  }
-  
-  if(randomchance === 2){
-    axiosMessage("FKM");
-  }
 }
 
 function coinFlip(usersChoice){
