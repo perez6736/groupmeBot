@@ -1,4 +1,4 @@
-var axiosMessage = require('./axiosMessage.js');
+var axiosMessage = require('../axiosMessage.js');
 
 // will randomly send a message saying fkm or fak key to the channel. 
 const FKM = function fkm(){

@@ -1,4 +1,4 @@
-var axiosMessage = require('./axiosMessage.js');
+var axiosMessage = require('../axiosMessage.js');
 
 const googleSearch = // builds a google search link using the user's input 
     function googleURL(searchQuery){

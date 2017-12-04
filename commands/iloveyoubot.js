@@ -1,4 +1,4 @@
-var axiosMessage = require('./axiosMessage.js');
+var axiosMessage = require('../axiosMessage.js');
 
 const loveBot = function iLoveYouBot(name){
     // array of possible responses 
