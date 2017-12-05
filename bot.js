@@ -83,30 +83,12 @@ function respond(requestBody){
   }
 }
 
-//BOT COMMANDS 
-//===============================================================
-
-function startTrivia(){
-  // get a trivia question 
-  // store the question and answer in an object. 
-      // make a variable that flags if trivia is running or not. 
-      // check answer method. 
-      // check if someone got the correct answer and if someone did then we will clear the object (so no one gets points for answering it after)
-      // award a point to the user in a new object 
-      // print the score 
-      // check flag and generate new question. 
-
-      // set a timer
-      // when timer goes to 0 - clear the object with the answer and method.. print time has ran out
-      // check flag
-      // generate a new question 
-
-}
-
 
 // to add 
 // - maybe move the features to new js files  of their own. 
-// create config file for bot id
+// - create config file for bot id and giphyid 
+
+// - nudge users in group chat. 
 // - define words 
 // - random fact
 // - weather? 
