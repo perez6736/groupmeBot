@@ -18,4 +18,14 @@ const Message = // this function posts the message to groupme.
     });
 }
 
+const groupNicknames = function getGroupNames(token){
+    axios.get('https://api.groupme.com/v3/groups?token=' + token)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
 module.exports = Message; 

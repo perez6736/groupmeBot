@@ -3,6 +3,8 @@ var config = require('../config.js');
 var giphyKey = config.giphyID;
 var giphy = require('giphy-api')(giphyKey);
 
+
+// sends a random gif to the gorupme group. 
 const randomGifUrl = function randomGif(gifTopic){
     // if user just types gif send a random gif. 
     if(gifTopic === ""){
