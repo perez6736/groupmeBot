@@ -1,5 +1,5 @@
 var axiosMessage = require('../axiosMessage.js');
-var config = require('../config');
+var config = require('../config.js');
 var giphyKey = config.giphyID;
 var giphy = require('giphy-api')(giphyKey);
 

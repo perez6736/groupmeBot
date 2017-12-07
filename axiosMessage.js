@@ -1,5 +1,5 @@
 var axios = require('axios');
-var config = require('../config');
+var config = require('./config.js');
 var botID = config.botID; 
 
 const Message = // this function posts the message to groupme. 
