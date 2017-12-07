@@ -1,5 +1,6 @@
 var axiosMessage = require('../axiosMessage.js');
-var giphyKey = process.env.GIPHY_KEY;
+var config = require('../config');
+var giphyKey = config.giphyID;
 var giphy = require('giphy-api')(giphyKey);
 
 const randomGifUrl = function randomGif(gifTopic){

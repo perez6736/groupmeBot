@@ -1,5 +1,6 @@
 var axios = require('axios');
-var botID = process.env.BOTID;
+var config = require('../config');
+var botID = config.botID; 
 
 const Message = // this function posts the message to groupme. 
     function axiosMessage(message){

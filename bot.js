@@ -1,16 +1,5 @@
-// config variables
-//=============================================================
-
-var botID = process.env.BOTID;
-var giphyKey = process.env.GIPHY_KEY;
-
 // Dependencies
 // =============================================================
-
-var axios = require('axios');
-
-// Dependencies for commands 
-// ==============================================================
 
 var coinFlip = require('./commands/coinflip.js');
 var coolGuy = require('./commands/coolguy.js');
@@ -98,25 +87,4 @@ function respond(requestBody){
 // - trivia game that can keep score in a trivia session. 
 
 
-//axios functions -- this makes the post request to group me to send the message and will add some to make ajax calls. 
-// ===================================================================
-function axiosMessage(message){
-  axios.post('https://api.groupme.com/v3/bots/post', {
-      "bot_id"  : botID,
-      "text"    : message
-  })
-  .then(function (response) {
-      console.log("response from axios goes here");
-      //console.log(response);
-  })
-  .catch(function (error) {
-      console.log("error will go here" );
-      console.log(error);
-  });
-}
-
-function axiosGetTrivia(){
-  // make a get request to fetch a question
-}
-  
 exports.respond = respond;
