@@ -21,6 +21,7 @@ var axiosObj = {
     },
 
     // this will grab the nicknames of the users in the group 
+    // pass in the groupid to this function to know what nick names to grab from what group. 
     getGroupNames: function (){
         axios.get('https://api.groupme.com/v3/groups?token=' + token)
         .then(function (response) {
