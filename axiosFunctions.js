@@ -24,7 +24,10 @@ var axiosObj = {
     getGroupNames: function (){
         axios.get('https://api.groupme.com/v3/groups?token=' + token)
         .then(function (response) {
-          console.log(response.data);
+            // here is where we grab the names from our group. 
+            console.log("hoping the memeber data goes here. ")
+          console.log(response.data.response[0].members);
+
         })
         .catch(function (error) {
           console.log(error);
