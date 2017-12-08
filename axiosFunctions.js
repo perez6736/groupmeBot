@@ -1,6 +1,7 @@
 var axios = require('axios');
 var config = require('./config.js');
 var botID = config.botID; 
+var token = config.tokenID;
 
 var axiosObj = {
     // this function posts the message to groupme.
@@ -20,7 +21,7 @@ var axiosObj = {
     },
 
     // this will grab the nicknames of the users in the group 
-    getGroupNames: function (token){
+    getGroupNames: function (){
         axios.get('https://api.groupme.com/v3/groups?token=' + token)
         .then(function (response) {
           console.log(response);
