@@ -1,4 +1,4 @@
-var axiosMessage = require('../axiosMessage.js');
+var axios = require('../axiosFunctions.js');
 var Chance = require('chance');
 var chance = new Chance();
 
@@ -21,21 +21,21 @@ const cilo = function threeDiceCiLo (){
   // check to see if a 456 was rolled. 
   if(sortedDiceRoll[0] === 4 && sortedDiceRoll[1] === 5 && sortedDiceRoll[2] === 6){
     // console.log("you rolled a 456");
-    axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 4 5 6 .. You Win");
+    axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 4 5 6 .. You Win");
     return; 
   }
 
   // check to see if trips were rolled. 
   if(sortedDiceRoll[0] === sortedDiceRoll[1] && sortedDiceRoll[0] === sortedDiceRoll[2]){
     // console.log("you rolled trips of " + sortedDiceRoll[0]); 
-    axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You rolled trips of " + sortedDiceRoll[0]); 
+    axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You rolled trips of " + sortedDiceRoll[0]); 
     return; 
   }
 
   // check to see if a 123 was rolled. 
   if(sortedDiceRoll[0] === 1 && sortedDiceRoll[1] === 2 && sortedDiceRoll[2] === 3){
     // console.log("you rolled a 456");
-    axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 1 2 3 .. You Lost");
+    axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 +  " - 1 2 3 .. You Lost");
     return; 
   }
 
@@ -48,7 +48,7 @@ const cilo = function threeDiceCiLo (){
         //then the match was 0 and 1 
         score = sortedDiceRoll[2]
         // console.log("score was " + score);
-        axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
+        axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
         return;
 
       }
@@ -57,7 +57,7 @@ const cilo = function threeDiceCiLo (){
         //then the mmatch was 1 and 2 
         score = sortedDiceRoll[0]
         // console.log("score was " + score);
-        axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
+        axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - You got a score of " + score);
         return;
       }
 
@@ -65,7 +65,7 @@ const cilo = function threeDiceCiLo (){
   }
 
   // console.log(" no score roll again. ");
-  axiosMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - No score try rolling again." );
+  axios.postMessage(diceRoll1 + " " + diceRoll2 + " " + diceRoll3 + " - No score try rolling again." );
 
 }
 

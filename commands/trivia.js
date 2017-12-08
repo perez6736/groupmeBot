@@ -1,4 +1,4 @@
-var axiosMessage = require('../axiosMessage.js');
+var axiosMessage = require('../axiosFunctions.js');
 
 //trivia game. 
 

@@ -7,6 +7,7 @@ var fkm = require('./commands/fkm.js');
 var googleSearch = require('./commands/googleSearch.js');
 var help = require('./commands/help.js');
 var iLoveYouBot = require('./commands/iloveyoubot.js'); 
+var nudge = require('./commands/nudge.js');
 var randomGif = require('./commands/randomgif.js');
 var threeDiceCiLo = require('./commands/threedicecilo.js'); 
 var trivia = require('./commands/trivia.js');
@@ -40,7 +41,7 @@ function respond(requestBody){
     }
 
     if(text.substring(0,4).toLowerCase() === "/gif"){
-      randomGif(text.substring(5));
+      randomGif(text.substring(4).trim());
     }
 
     if(text.substring(0,9).toLowerCase() === "/cool guy"){
@@ -49,6 +50,10 @@ function respond(requestBody){
 
     if(text.substring(0,5).toLowerCase() === "/cilo"){
       threeDiceCiLo();
+    }
+
+    if(text.substring(0,6).toLowerCase() === "/nudge"){
+      nudge();
     }
 
     if(text.toLowerCase() === "/trivia quit"){

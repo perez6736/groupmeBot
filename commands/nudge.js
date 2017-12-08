@@ -1,4 +1,4 @@
-var axiosMessage = require('../axiosMessage.js');
+var axios = require('../axiosFunctions.js');
 
 //function to send a message with everyones nickname. 
 

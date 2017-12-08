@@ -1,8 +1,8 @@
 var cool = require('cool-ascii-faces');
-var axiosMessage = require('../axiosMessage.js');
+var axios = require('../axiosFunctions.js');
 
 const theCoolGuy = function coolGuy(){
-    axiosMessage(cool());
+  axios.postMessage(cool());
   }
 
   module.exports = theCoolGuy; 
