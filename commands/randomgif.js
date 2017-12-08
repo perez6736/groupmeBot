@@ -15,7 +15,6 @@ const randomGifUrl = function randomGif(gifTopic){
   
     else{
       giphy.random(gifTopic, function (err,res){
-        console.log(res);
         // sometimes we wont get a gif back -- thats just life. 
         if(res.data.length === 0){
           axios.postMessage("Sorry. No gifs matching -" + gifTopic);
