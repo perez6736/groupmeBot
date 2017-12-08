@@ -8,3 +8,5 @@ var nudge = {
 }
 
 // need to write a function that grabs the nicknames from the group. 
+
+module.exports = nudge;

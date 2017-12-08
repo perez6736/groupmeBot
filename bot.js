@@ -53,7 +53,7 @@ function respond(requestBody){
     }
 
     if(text.substring(0,6).toLowerCase() === "/nudge"){
-      nudge();
+      nudge.nudgeEveryone();
     }
 
     if(text.toLowerCase() === "/trivia quit"){
