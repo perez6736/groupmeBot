@@ -3,6 +3,8 @@ var config = require('./config.js');
 var botID = config.botID; 
 var token = config.tokenID;
 
+var groupnameArray; 
+
 var axiosObj = {
     // this function posts the message to groupme.
     postMessage: function (message){
@@ -29,7 +31,7 @@ var axiosObj = {
             console.log("hoping the memeber data goes here. ")
           console.log(response.data.response[0].members);
         //   for(i=0; i<response.data.response[0].members.length; i++){
-
+                // put this stuff an a variable and return that
         //    // response.data.response[0].members[i].nickname
         //   }
 
