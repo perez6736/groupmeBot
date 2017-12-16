@@ -28,7 +28,7 @@ var axiosObj = {
         axios.get('https://api.groupme.com/v3/groups?token=' + token)
         .then(function (response) {
             // here is where we grab the names from our group. 
-            var userArray;
+            var userArray =[];
             for(i=0; i<response.data.response[0].members.length; i++){
                 
                 userArray.push(response.data.response[0].members[i].nickname);
