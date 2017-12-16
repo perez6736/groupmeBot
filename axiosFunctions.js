@@ -28,12 +28,14 @@ var axiosObj = {
         axios.get('https://api.groupme.com/v3/groups?token=' + token)
         .then(function (response) {
             // here is where we grab the names from our group. 
-            var userArray =[];
+            console.log("hoping the memeber data goes here. ")
+            console.log(response.data.response[0].members);
+            var userArray = [];
             for(i=0; i<response.data.response[0].members.length; i++){
                 
                 userArray.push(response.data.response[0].members[i].nickname);
             }
-            console.log(userArray);
+            console.log("this should be an array of users " + userArray);
             return userArray;
         })
         .catch(function (error) {
