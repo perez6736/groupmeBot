@@ -5,6 +5,8 @@ var nudge = {
     nudgeEveryone: function (){
         // make sure to pass in the groupid here into this function! 
         var names = axios.getGroupNames();
+        
+        // aysnc stuff happens here. 
         console.log(names + " These are the array of names. ")
     }
 }
