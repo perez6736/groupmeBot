@@ -29,12 +29,13 @@ var axiosObj = {
         .then(function (response) {
             // here is where we grab the names from our group. 
             console.log("hoping the memeber data goes here. ")
-          console.log(response.data.response[0].members);
-        //   for(i=0; i<response.data.response[0].members.length; i++){
-                // put this stuff an a variable and return that
-        //    // response.data.response[0].members[i].nickname
-        //   }
-
+            console.log(response.data.response[0].members);
+            var userArray;
+            for(i=0; i<response.data.response[0].members.length; i++){
+                
+                userArray.push(response.data.response[0].members[i].nickname);
+            }
+            return userArray;
         })
         .catch(function (error) {
           console.log(error);

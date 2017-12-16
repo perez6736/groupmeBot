@@ -4,7 +4,8 @@ var axios = require('../axiosFunctions.js');
 var nudge = {
     nudgeEveryone: function (){
         // make sure to pass in the groupid here into this function! 
-        axios.getGroupNames();
+        var names = axios.getGroupNames();
+        console.log(names + " These are the array of names. ")
     }
 }
 
