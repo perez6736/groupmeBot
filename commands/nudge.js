@@ -7,7 +7,26 @@ var nudge = {
         axios.getUserIds().then(function(fromResolve){
             // userID is an array of all the userIDs in the group. 
             var userID = fromResolve;
-            
+
+// need to make an attachment like this to the post request. 
+// *  {
+//  *    "attachments": [
+//  *      {
+//  *        "loci": [
+//  *          [
+//  *            10,
+//  *            8
+//  *          ]
+//  *        ],
+//  *        "type": "mentions",
+//  *        "user_ids": [
+//  *          "12345678"
+//  *        ]
+//  *      }
+//  *    ],
+//  *    "botId": "16154809",
+//  *    "text": "Attention @person1!",
+//  *  }
         });
     }
 }
