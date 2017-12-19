@@ -11,8 +11,10 @@ var nudge = {
             for(i=0; i<names.length; i++){
                 names[i] = "@"+names[i];
             }
+            // now i need to seperate the indexes and create one giant string. 
 
-            axios.postMessage(names);
+            var atNames = names.join(" ");;
+            axios.postMessage(atNames);
         });
     }
 }
