@@ -37,10 +37,11 @@ var axiosObj = {
                     
                     userArray.push(response.data.response[0].members[i].nickname);
                 }
-                console.log("this should be an array of users " + userArray);
+                
                 
                 //if we got a list of users we resolve 
                 if(userArray.length>0){
+                    console.log("this should be an array of users " + userArray);
                     resolve(userArray);
                 }
                 //if no list then reject.
