@@ -41,7 +41,6 @@ var axiosObj = {
                 
                 //if we got a list of users we resolve 
                 if(userArray.length>0){
-                    console.log("this should be an array of users " + userArray);
                     resolve(userArray);
                 }
                 //if no list then reject.
