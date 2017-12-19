@@ -4,11 +4,11 @@ var axios = require('../axiosFunctions.js');
 var nudge = {
     nudgeEveryone: function (){
         // make sure to pass in the groupid here into this function! 
-        var names = axios.getGroupNames();
-        console.log(names + " These are the array of names. ")
+        var names = axios.getGroupNames().then(
+            console.log(names + " These are the array of names. ")
+
+        );
     }
 }
-
-// need to write a function that grabs the nicknames from the group. 
 
 module.exports = nudge;

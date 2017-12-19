@@ -5,6 +5,8 @@ var token = config.tokenID;
 
 var groupnameArray; 
 
+//if adding a get request here... be sure to make it a promise.
+
 var axiosObj = {
     // this function posts the message to groupme.
     postMessage: function (message){
@@ -25,23 +27,33 @@ var axiosObj = {
     // this will grab the nicknames of the users in the group 
     // pass in the groupid to this function to know what nick names to grab from what group. 
     getGroupNames: function (){
-        axios.get('https://api.groupme.com/v3/groups?token=' + token)
-        .then(function (response) {
-            // here is where we grab the names from our group. 
-            console.log("hoping the memeber data goes here. ")
-            console.log(response.data.response[0].members);
-            var userArray = [];
-            for(i=0; i<response.data.response[0].members.length; i++){
+        // made a promise here cause where i call this function i need it to complete and return the userarray before i can do more stuff. 
+        return new Promise(function(resolve, reject){
+            axios.get('https://api.groupme.com/v3/groups?token=' + token)
+            .then(function (response) {
+                // here is where we grab the names from our group. 
+                var userArray = [];
+                for(i=0; i<response.data.response[0].members.length; i++){
+                    
+                    userArray.push(response.data.response[0].members[i].nickname);
+                }
+                console.log("this should be an array of users " + userArray);
                 
-                userArray.push(response.data.response[0].members[i].nickname);
-            }
-            console.log("this should be an array of users " + userArray);
-            return userArray;
+                //if we got a list of users we resolve 
+                if(userArray.length>0){
+                    resolve(userArray);
+                }
+                //if no list then reject.
+                else{
+                    reject();
+                }
+                
+            })
         })
-        .catch(function (error) {
-          console.log(error);
-        });
     }
 }
 
 module.exports = axiosObj; 
+
+
+
