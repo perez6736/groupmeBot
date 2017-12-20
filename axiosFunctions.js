@@ -9,19 +9,36 @@ var groupnameArray;
 
 var axiosObj = {
     // this function posts the message to groupme.
-    postMessage: function (message){
-        axios.post('https://api.groupme.com/v3/bots/post', {
-            "bot_id"  : botID,
-            "text"    : message
-        })
-        .then(function (response) {
-            console.log("response from axios goes here");
-            //console.log(response);
-        })
-        .catch(function (error) {
-            console.log("error will go here" );
-            console.log(error);
-        });
+    postMessage: function (message, attachment){
+        if(attachment){ //if we pass in an attachment lets post with it. 
+            axios.post('https://api.groupme.com/v3/bots/post', {
+                "attachments" : attachment,
+                "bot_id"  : botID,
+                "text"    : message
+            })
+            .then(function (response) {
+                console.log("response from axios goes here");
+                //console.log(response);
+            })
+            .catch(function (error) {
+                console.log("error will go here" );
+                console.log(error);
+            });
+        }
+        else{// if no attachment then we post without attachemnt. 
+            axios.post('https://api.groupme.com/v3/bots/post', {
+                "bot_id"  : botID,
+                "text"    : message
+            })
+            .then(function (response) {
+                console.log("response from axios goes here");
+                //console.log(response);
+            })
+            .catch(function (error) {
+                console.log("error will go here" );
+                console.log(error);
+            });
+        }
     },
 
     // this will grab the nicknames of the users in the group 

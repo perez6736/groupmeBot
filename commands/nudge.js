@@ -25,7 +25,7 @@ var nudge = {
 //  *      }
 //  *    ],
 //  *    "botId": "16154809",
-//  *    "text": "Attention @person1!",
+//  *    "text": "Attention @person1!", -the user name need to go here. 
 //  *  }
         });
     }
