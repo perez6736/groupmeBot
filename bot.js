@@ -1,6 +1,7 @@
 // Dependencies
 // =============================================================
 
+// require each command - try to keep this in alphabetical order. 
 var coinFlip = require('./commands/coinflip.js');
 var coolGuy = require('./commands/coolguy.js');
 var fkm = require('./commands/fkm.js');
@@ -79,9 +80,6 @@ function respond(requestBody){
 
 
 // to add 
-// - maybe move the features to new js files  of their own. 
-// - create config file for bot id and giphyid 
-
 // - nudge users in group chat. 
 // - define words 
 // - random fact

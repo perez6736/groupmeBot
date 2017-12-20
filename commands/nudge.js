@@ -4,13 +4,32 @@ var axios = require('../axiosFunctions.js');
 var nudge = {
     nudgeEveryone: function (){
         // make sure to pass in the groupid here into this function! 
-        var names = axios.getGroupNames();
-        
-        // aysnc stuff happens here. 
-        console.log(names + " These are the array of names. ")
+        axios.getUserIds().then(function(fromResolve){
+            // userID is an array of all the userIDs in the group. 
+            var userID = fromResolve;
+
+// need to make an attachment like this to the post request. 
+// *  {
+//  *    "attachments": [
+//  *      {
+//  *        "loci": [
+//  *          [
+//  *            10,
+//  *            8
+//  *          ]
+//  *        ],
+//  *        "type": "mentions",
+//  *        "user_ids": [
+//  *          "12345678"
+//  *        ]
+//  *      }
+//  *    ],
+//  *    "botId": "16154809",
+//  *    "text": "Attention @person1!",
+//  *  }
+        });
     }
 }
 
-// need to write a function that grabs the nicknames from the group. 
-
 module.exports = nudge;
+
