@@ -8,6 +8,7 @@ var nudge = {
             // userID is an array of all the userIDs in the group. 
             var userID = fromResolve;
 
+//https://gist.github.com/petemcgrath/a061795c25a2179a1aa6
 // need to make an attachment like this to the post request. 
 // *  {
 //  *    "attachments": [
