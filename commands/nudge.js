@@ -12,7 +12,7 @@ var nudge = {
 // *  {
 //  *    "attachments": [
 //  *      {
-//  *        "loci": [
+//  *        "loci": [ //this is where the @etion will go in the string. 
 //  *          [
 //  *            10,
 //  *            8
