@@ -53,8 +53,6 @@ var axiosObj = {
                     
                     userIDArray.push(response.data.response[0].members[i].user_id);
                 }
-                console.log("right after for loop.")
-                console.log(userIDArray);
                 //if we got a list of users we resolve 
                 if(userIDArray.length>0){
                     console.log("resolved");
