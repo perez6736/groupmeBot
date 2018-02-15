@@ -88,6 +88,10 @@ function respond(requestBody){
 // - reddit posts 
 // - send a text message from groupme 
 // - trivia game that can keep score in a trivia session. 
+// - keep score of coin flip..
+// - cilo head to head
+// - change text reader to regex instead of substring. 
+// - set a local env. 
 
 
 exports.respond = respond;
