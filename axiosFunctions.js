@@ -42,7 +42,6 @@ var axiosObj = {
     },
 
     // this will grab the nicknames of the users in the group 
-    // pass in the groupid to this function to know what nick names to grab from what group. 
     getUserIds: function (){
         // made a promise here cause where i call this function i need it to complete and return the userarray before i can do more stuff. 
         return new Promise(function(resolve, reject){
@@ -54,17 +53,18 @@ var axiosObj = {
                     
                     userIDArray.push(response.data.response[0].members[i].user_id);
                 }
-                
-                
+                console.log("right after for loop.")
+                console.log(userIDArray);
                 //if we got a list of users we resolve 
                 if(userIDArray.length>0){
+                    console.log("resolved");
                     resolve(userIDArray);
                 }
                 //if no list then reject.
                 else{
+                    console.log("rejected");
                     reject();
                 }
-                
             })
         })
     }
