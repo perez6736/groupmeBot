@@ -55,8 +55,8 @@ var axiosObj = {
                 // we are going to make and user object and stick it in the array. 
                 for(i=0; i<response.data.response[0].members.length; i++){
                     userObj = {}; 
-                    userObj[id] = response.data.response[0].members[i].user_id;
-                    userObj[name] = response.data.response[0].members[i].nickname;
+                    userObj["id"] = response.data.response[0].members[i].user_id;
+                    userObj["name"] = response.data.response[0].members[i].nickname;
                     userIDArray.push(userObj);
                 }
                 //if we got a list of users we resolve 
