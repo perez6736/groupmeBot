@@ -83,10 +83,10 @@ function respond(requestBody){
 // - nudge users in group chat. 
 // - define words 
 // - random fact
-// - weather? 
+// - weather? forcast.io - darksky 
 // - damon spell checking 
 // - reddit posts 
-// - send a text message from groupme 
+// - send a text message from groupme - twilio for sms 
 // - trivia game that can keep score in a trivia session. 
 // - keep score of coin flip..
 // - cilo head to head
