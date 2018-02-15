@@ -1,4 +1,5 @@
 var axios = require('../axiosFunctions.js');
+var config = require('./config.js');
 var botID = config.botID;
 
 //function to send a message with everyones nickname. 
