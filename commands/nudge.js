@@ -1,12 +1,13 @@
 var axios = require('../axiosFunctions.js');
+var botID = config.botID;
 
 //function to send a message with everyones nickname. 
 var nudge = {
     nudgeEveryone: function (){
-        axios.getUserIds().then(function(fromResolve){
+        axios.getUserIdsAndNames().then(function(idAndName){
             // userID is an array of all the userIDs in the group. 
-            var userIDs = fromResolve;
-            console.log(userIDs);
+            var userIDsAndNames = idAndName;
+            console.log(userIDsAndNames);
 
             theAttachment ={
                 "attachments": [
@@ -18,14 +19,14 @@ var nudge = {
                             ]
                         ],
                         "type": "mentions",
-                        "user_ids": userIDs
+                        "user_ids": userIDsAndNames
                     }
                 ],
-                "botId": "16154809",
+                "botId": botID,
                 "text": "@danny"
             }
 
-            axios.postMessage(theAttachment.text, theAttachment);
+            //axios.postAttachment(theAttachment);
 
             });
     }
