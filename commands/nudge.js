@@ -36,6 +36,12 @@ var nudge = {
 
 module.exports = nudge;
 
+// [ 
+//     { id: '5551432', name: 'Danny perez' },
+//     { id: '9878520', name: 'Tom Scancarella' },
+//     { id: '46185459', name: 'Zo' } 
+// ]
+
 
 //https://gist.github.com/petemcgrath/a061795c25a2179a1aa6
 // need to make an attachment like this to the post request. 
