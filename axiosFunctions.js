@@ -10,6 +10,7 @@ var groupnameArray;
 var axiosObj = {
     // this function posts the message to groupme.
     postMessage: function (message, attachment){
+        //maybe check if message type  is an object. ?
         if(attachment){ //if we pass in an attachment lets post with it. 
             axios.post('https://api.groupme.com/v3/bots/post', {
                 "attachments" : attachment,
