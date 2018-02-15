@@ -92,6 +92,7 @@ function respond(requestBody){
 // - cilo head to head
 // - change text reader to regex instead of substring. 
 // - set a local env. 
+// - https://ngrok.com/ - use that to make the callback URL my own local host instead of the heroku site. 
 
 
 exports.respond = respond;
