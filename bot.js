@@ -12,7 +12,7 @@ var nudge = require('./commands/nudge.js');
 var randomGif = require('./commands/randomgif.js');
 var threeDiceCiLo = require('./commands/threedicecilo.js'); 
 var trivia = require('./commands/trivia.js');
-var petey = require('/commands/petey.js');
+var petey = require('./commands/petey.js');
 
 
 
