@@ -10,10 +10,6 @@ var nudge = {
             var userIDsAndNames = idAndName;
             console.log(userIDsAndNames);
 
-            for(i=0; userIDsAndNames.length; i++){
-                //might loop to get ids here. 
-            }
-
             theAttachment ={
                 "attachments": [
                     {
