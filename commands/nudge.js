@@ -10,24 +10,28 @@ var nudge = {
             var userIDsAndNames = idAndName;
             console.log(userIDsAndNames);
 
+            for(i=0; userIDsAndNames.length; i++){
+                //might loop to get ids here. 
+            }
+
             theAttachment ={
                 "attachments": [
                     {
                         "loci": [
                             [
                                 0,
-                                8 
+                                5
                             ]
                         ],
                         "type": "mentions",
-                        "user_ids": userIDsAndNames
+                        "user_ids": "5551432"
                     }
                 ],
                 "botId": botID,
                 "text": "@danny"
             }
 
-            //axios.postAttachment(theAttachment);
+            axios.postAttachment(theAttachment);
 
             });
     }
