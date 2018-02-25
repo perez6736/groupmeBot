@@ -24,7 +24,7 @@ var nudge = {
                             ]
                         ],
                         "type": "mentions",
-                        "user_ids": "5551432"
+                        "user_ids": ["5551432"]
                     }
                 ],
                 "botId": botID,
