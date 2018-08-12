@@ -16,18 +16,18 @@ var nudge = {
                         "loci": [
                             [
                                 0,
-                                8 
+                                5
                             ]
                         ],
                         "type": "mentions",
-                        "user_ids": userIDsAndNames
+                        "user_ids": ["5551432"]
                     }
                 ],
                 "botId": botID,
                 "text": "@danny"
             }
 
-            //axios.postAttachment(theAttachment);
+            axios.postAttachment(theAttachment);
 
             });
     }
