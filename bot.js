@@ -67,8 +67,8 @@ function respond(requestBody){
       // trivia.startTrivia;
     }
     
-    if(text === "trivia answer"){
-      // trivia.triviaAnswer;
+    if(text === "/a " && trivia.isTriviaOn){
+      // trivia.triviaAnswer(text.substring(3).trim(), name);
     }
 
 
@@ -80,7 +80,7 @@ function respond(requestBody){
 
 
 // to add 
-// - nudge users in group chat. 
+// - nudge users in group chat. - this was a pain. 
 // - define words 
 // - random fact
 // - weather? forcast.io - darksky 

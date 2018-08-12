@@ -2,7 +2,7 @@ var axios = require('../axiosFunctions.js');
 var config = require('../config.js');
 var botID = config.botID;
 
-//function to send a message with everyones nickname. 
+//function to send a message with everyones nickname. - this is incomplete
 var nudge = {
     nudgeEveryone: function (){
         axios.getUserIdsAndNames().then(function(idAndName){
