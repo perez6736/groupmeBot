@@ -10,7 +10,7 @@ var trivia = {
     playerAnswer: "", 
     triviaScoreKeeper: {},
 
-    startTrivia = function(){
+    startTrivia: function(){
         this.isTriviaOn = true;
 
         // create axios getrequest to a trivia API to get a question object
@@ -19,18 +19,18 @@ var trivia = {
         this.showQuestion();
     },
 
-    getQuestion = function(){
+    getQuestion: function(){
         // assign the question from the api to the correct variable within object 
         // assign all other variables to get question 
 
     },
 
     // show question to chat and start timer
-    showQuestion = function(){
+    showQuestion: function(){
         //
     },
 
-    readAndCheckAnswer = function(answer, playername){
+    readAndCheckAnswer: function(answer, playername){
         // parse answer and store it as the variable answer 
         this.playerAnswer = answer;
     }
