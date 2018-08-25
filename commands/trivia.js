@@ -24,14 +24,14 @@ var triviaGame = {
         triviaObject = axios.getRandomTrivaQuestion();
         console.log("question object = ");
         console.log(triviaObject);
-        self.triviaQuestion = triviaObject[0].question;
-        self.triviaAnswer = triviaObject[0].answer;
-        self.triviaPoints = triviaObject[0].value;
+        this.triviaQuestion = triviaObject[0].question;
+        this.triviaAnswer = triviaObject[0].answer;
+        this.triviaPoints = triviaObject[0].value;
     },
 
     // show question to chat and start timer
     showQuestion: function(){
-        axios.postMessage(self.triviaQuestion);
+        axios.postMessage(this.triviaQuestion);
     },
 
     readAndCheckAnswer: function(answer, playername){
@@ -40,7 +40,7 @@ var triviaGame = {
         if(this.playerAnswer == answer){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(self.triviaAnswer);
+            axios.postMessage(this.triviaAnswer);
             //change the question
             axios.getQuestion();
         }
@@ -53,7 +53,7 @@ var triviaGame = {
     changeQuestion: function(){
         //if a question is too hard they can opt to change the question - two ppl need to agree to this so players wont spam
         //first display the answer to the last question. 
-        self.getQuestion();
+        this.getQuestion();
     }
 
 
