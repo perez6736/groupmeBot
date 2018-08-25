@@ -1,4 +1,4 @@
-var axiosMessage = require('../axiosFunctions.js');
+var axios = require('../axiosFunctions.js');
 
 //trivia game. 
 var trivia = {
@@ -20,6 +20,9 @@ var trivia = {
     },
 
     getQuestion: function(){
+        // TODO - organize the object so that the question answer and value go to the correct variable. 
+        self.triviaQuestion = axios.getRandomTrivaQuestion();
+
         // assign the question from the api to the correct variable within object 
         // assign all other variables to get question 
 

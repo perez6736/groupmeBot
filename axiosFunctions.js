@@ -71,7 +71,30 @@ var axiosObj = {
                 }
             })
         })
+    },
+
+    // this will grab the nicknames of the users in the group 
+    getRandomTrivaQuestion: function (){
+        // made a promise here cause where i call this function i need it to complete and return the userarray before i can do more stuff. 
+        return new Promise(function(resolve, reject){
+            axios.get('http://jservice.io/api/random')
+            .then(function (response) {
+                //make the question
+                var question = response;
+                
+                if(question.length>0){
+                    console.log("resolved");
+                    resolve(question);
+                }
+                else{
+                    console.log("rejected");
+                    reject();
+                }
+            })
+        })
     }
+
+
 }
 
 module.exports = axiosObj; 

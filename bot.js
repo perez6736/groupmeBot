@@ -93,8 +93,6 @@ function respond(requestBody){
 // - reddit posts 
 // - send a text message from groupme - twilio for sms 
 // - trivia game that can keep score in a trivia session. 
-// - keep score of coin flip..
-// - cilo head to head
 // - change text reader to regex instead of substring. 
 // - set a local env. 
 // - https://ngrok.com/ - use that to make the callback URL my own local host instead of the heroku site. 
