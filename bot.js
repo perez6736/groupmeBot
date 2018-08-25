@@ -60,12 +60,12 @@ function respond(requestBody){
 
     if(text.toLowerCase() === "/trivia quit"){
       // turn the trivia flag to false so the method
-      trivia.trivaEnd;
+      trivia.trivaEnd();
     }
 
     if(text.substring(0,7).toLowerCase() === "/trivia"){
       console.log("trivia will start");
-      trivia.startTrivia;
+      trivia.startTrivia();
     }
     
     if(text === "/a " && trivia.isTriviaOn){
