@@ -79,8 +79,8 @@ var axiosObj = {
         return new Promise(function(resolve, reject){
             axios.get('http://jservice.io/api/random')
             .then(function (response) {
-                //make the question
-                var question = response;
+                //make the question --- question is an array. 
+                var question = response.data;
                 console.log("in axios get request.");
                 console.log(question);
                 if(question.length>0){
