@@ -13,7 +13,7 @@ var trivia = {
 
     startTrivia: function(){
         this.isTriviaOn = true;
-
+        console.log("this is start trivia");
         // create axios getrequest to a trivia API to get a question object
         this.getQuestion();
 
