@@ -58,3 +58,4 @@ var triviaGame = {
 
 
 }
+module.exports = triviaGame; 
