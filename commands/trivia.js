@@ -22,6 +22,8 @@ var trivia = {
 
     getQuestion: function(){
         triviaObject = axios.getRandomTrivaQuestion();
+        console.log("question object = ");
+        console.log(triviaObject);
         self.triviaQuestion = triviaObject[0].question;
         self.triviaAnswer = triviaObject[0].answer;
         self.triviaPoints = triviaObject[0].value;

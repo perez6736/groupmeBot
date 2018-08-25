@@ -64,7 +64,7 @@ function respond(requestBody){
     }
 
     if(text.substring(0,7).toLowerCase() === "/trivia"){
-      
+      console.log("trivia will start");
       trivia.startTrivia;
     }
     
