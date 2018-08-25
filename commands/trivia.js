@@ -2,7 +2,7 @@ var axios = require('../axiosFunctions.js');
 var triviaObject;
 
 //trivia game object. 
-var trivia = {
+var triviaGame = {
     isTriviaOn: false,
     triviaQuestion: "",
     triviaAnswer: "",

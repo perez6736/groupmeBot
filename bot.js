@@ -65,11 +65,11 @@ function respond(requestBody){
 
     if(text.substring(0,7).toLowerCase() === "/trivia"){
       console.log("trivia will start");
-      trivia.startTrivia();
+      trivia.triviaGame.startTrivia();
     }
     
     if(text === "/a " && trivia.isTriviaOn){
-      trivia.triviaAnswer(text.substring(3).trim(), name);
+      trivia.triviaGame.triviaAnswer(text.substring(3).trim(), name);
     }
 
     if(text === "/petey"){
