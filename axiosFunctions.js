@@ -81,7 +81,8 @@ var axiosObj = {
             .then(function (response) {
                 //make the question
                 var question = response;
-                
+                console.log("in axios get request.");
+                console.log(question);
                 if(question.length>0){
                     console.log("resolved");
                     resolve(question);
