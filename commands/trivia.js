@@ -17,7 +17,7 @@ var triviaGame = {
         // create axios getrequest to a trivia API to get a question object
         this.getQuestion();
 
-        this.showQuestion();
+        //this.showQuestion();
     },
 
     getQuestion: function(){
