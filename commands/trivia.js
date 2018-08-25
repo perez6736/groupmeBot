@@ -24,9 +24,9 @@ var triviaGame = {
         triviaObject = axios.getRandomTrivaQuestion();
         console.log("question object = ");
         console.log(triviaObject);
-        this.triviaQuestion = triviaObject[0].question;
-        this.triviaAnswer = triviaObject[0].answer;
-        this.triviaPoints = triviaObject[0].value;
+        //this.triviaQuestion = triviaObject[0].question;
+        //this.triviaAnswer = triviaObject[0].answer;
+        //this.triviaPoints = triviaObject[0].value;
     },
 
     // show question to chat and start timer
