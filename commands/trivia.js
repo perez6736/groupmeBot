@@ -30,6 +30,7 @@ var triviaGame = {
             this.triviaPoints = triviainfo[0].value;
             console.log("the variables = ");
             console.log(this.triviaQuestion);
+            console.log(typeof this.triviaQuestion);
             console.log(this.triviaAnswer);
             console.log(this.triviaPoints);
         })
@@ -39,7 +40,8 @@ var triviaGame = {
     showQuestion: function(){
         var triviaQuestionString;
         triviaQuestionString = this.triviaQuestion.toString();
-        axios.postMessage(triviaQuestionString);
+        console.log(typeof triviaQuestionString);
+        axios.postMessage("triviaQuestionString");
     },
 
     readAndCheckAnswer: function(answer, playername){
