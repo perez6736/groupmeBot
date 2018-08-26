@@ -1,5 +1,4 @@
 var axios = require('../axiosFunctions.js');
-var triviaObject;
 
 //trivia game object. 
 var triviaGame = {
@@ -23,12 +22,12 @@ var triviaGame = {
     getQuestion: function(){
         axios.getRandomTrivaQuestion().then(function(triviainfo){
             console.log("question object = ");
-            console.log(triviaObject);
+            console.log(triviainfo);
             //the problem is that the promise is not finishing and its trying to assign the variables before the data comes in.
 
-            this.triviaQuestion = triviaObject[0].question;
-            this.triviaAnswer = triviaObject[0].answer;
-            this.triviaPoints = triviaObject[0].value;
+            this.triviaQuestion = triviainfo[0].question;
+            this.triviaAnswer = triviainfo[0].answer;
+            this.triviaPoints = triviainfo[0].value;
         })
     },
 
