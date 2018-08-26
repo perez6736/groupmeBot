@@ -15,8 +15,6 @@ var triviaGame = {
         console.log("this is start trivia");
         // create axios getrequest to a trivia API to get a question object
         this.getQuestion();
-
-        this.showQuestion();
     },
 
     getQuestion: function(){
@@ -33,6 +31,8 @@ var triviaGame = {
             console.log(typeof this.triviaQuestion);
             console.log(this.triviaAnswer);
             console.log(this.triviaPoints);
+
+            this.showQuestion();
         })
     },
 
