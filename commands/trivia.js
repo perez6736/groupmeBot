@@ -21,15 +21,15 @@ var triviaGame = {
     },
 
     getQuestion: function(){
-        triviaObject = axios.getRandomTrivaQuestion();
-        console.log("question object = ");
-        console.log(triviaObject);
+        axios.getRandomTrivaQuestion().then(function(triviainfo){
+            console.log("question object = ");
+            console.log(triviaObject);
+            //the problem is that the promise is not finishing and its trying to assign the variables before the data comes in.
 
-//the problem is that the promise is not finishing and its trying to assign the variables before the data comes in.
-
-        //this.triviaQuestion = triviaObject[0].question;
-        //this.triviaAnswer = triviaObject[0].answer;
-        //this.triviaPoints = triviaObject[0].value;
+            this.triviaQuestion = triviaObject[0].question;
+            this.triviaAnswer = triviaObject[0].answer;
+            this.triviaPoints = triviaObject[0].value;
+        })
     },
 
     // show question to chat and start timer
