@@ -31,9 +31,8 @@ var triviaGame = {
             console.log(typeof this.triviaQuestion);
             console.log(this.triviaAnswer);
             console.log(this.triviaPoints);
-
-            this.showQuestion(this.triviaQuestion);
-        })
+        });
+        this.showQuestion(this.triviaQuestion);
     },
 
     // show question to chat and start timer
