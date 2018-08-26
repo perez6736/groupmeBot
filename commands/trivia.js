@@ -32,6 +32,7 @@ var triviaGame = {
             console.log(this.triviaAnswer);
             console.log(this.triviaPoints);
         });
+        // need to do more debugging
         console.log("QUESITON IS HERE " + this.triviaQuestion)
         this.showQuestion(this.triviaQuestion);
     },
