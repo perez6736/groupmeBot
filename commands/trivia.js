@@ -32,14 +32,9 @@ var triviaGame = {
             console.log(this.triviaAnswer);
             console.log(this.triviaPoints);
 
-            this.showQuestion(this.triviaQuestion);
+            axios.postMessage(this.triviaQuestion);
         });
         
-    },
-
-    // show question to chat and start timer
-    showQuestion: function(question){
-        axios.postMessage("Question = " + question);
     },
 
     readAndCheckAnswer: function(answer, playername){
