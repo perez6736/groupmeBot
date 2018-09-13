@@ -41,7 +41,7 @@ var triviaGame = {
         this.playerAnswer = answer;
 
         console.log(" this is in the function - " + answer);
-        consol.log(this);
+        console.log(this);
         if(this.playerAnswer == answer){
             //need to reward the player with points
             //show the correct answer
