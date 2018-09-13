@@ -41,11 +41,11 @@ var triviaGame = {
         this.playerAnswer = answer;
 
         console.log(" this is in the function - " + answer);
-
+        consol.log(this);
         if(this.playerAnswer == answer){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(playername + " was correct and awarded ");
+            axios.postMessage(playername + " was correct with the answer -" + answer);
             //change the question
             this.getQuestion();
         }
