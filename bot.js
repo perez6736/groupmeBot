@@ -69,6 +69,7 @@ function respond(requestBody){
     }
     
     if(text === "/a " && trivia.isTriviaOn){
+      console.log(text.substring(3).trim() + name + " -- this is users answer")
       trivia.triviaAnswer(text.substring(3).trim(), name);
     }
 
