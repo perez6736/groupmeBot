@@ -1,36 +1,42 @@
 var axios = require('../axiosFunctions.js');
 
+//i need global variables because i was running into scope issues. 
+var isTriviaOn = false;
+var triviaQuestion = ""
+var triviaAnswer = ""
+var triviaWinner = ""
+var triviaPoints = ""
+var playerAnswer = ""
+var triviaScoreKeeper = {};
+
+
 //trivia game object. 
 var triviaGame = {
-    isTriviaOn: false,
-    triviaQuestion: "",
-    triviaAnswer: "",
-    triviaWinner: "",
-    triviaPoints: "",
-    playerAnswer: "", 
-    triviaScoreKeeper: {},
+    //isTriviaOn: false,
+    //triviaQuestion: "",
+    //triviaAnswer: "",
+    //triviaWinner: "",
+    //triviaPoints: "",
+    //playerAnswer: "", 
+    //triviaScoreKeeper: {},
 
     startTrivia: function(){
-        this.isTriviaOn = true;
-        console.log("this is start trivia");
+        isTriviaOn = true;
         // create axios getrequest to a trivia API to get a question object
         this.getQuestion();
     },
  
     getQuestion: function(){
         axios.getRandomTrivaQuestion().then(function(triviainfo){
-            console.log("question object = ");
-            console.log(triviainfo);
-            //the problem is that the promise is not finishing and its trying to assign the variables before the data comes in.
 
-            this.triviaQuestion = triviainfo[0].question;
-            this.triviaAnswer = triviainfo[0].answer;
-            this.triviaPoints = triviainfo[0].value;
+            triviaQuestion = triviainfo[0].question;
+            triviaAnswer = triviainfo[0].answer;
+            triviaPoints = triviainfo[0].value;
             console.log("the variables = ");
-            console.log(this.triviaQuestion);
-            console.log(this.triviaAnswer);
+            console.log(triviaQuestion);
+            console.log(triviaAnswer);
 
-            axios.postMessage(this.triviaQuestion);
+            axios.postMessage(triviaQuestion);
 
         });
         
@@ -38,26 +44,26 @@ var triviaGame = {
 
     readAndCheckAnswer: function(playeranswer, playername){
         // parse answer and store it as the variable answer
-        playeranswer = playeranswer.toLowerCase();
-        this.playerAnswer = playeranswer;
-        var triviaAnswerLower = this.triviaAnswer.toLowerCase();
-        var points = this.triviaPoints
+        playerAnswer = playeranswer;
+        var playerAnswerLower = playeranswer.toLowerCase();
+        var triviaAnswerLower = triviaAnswer.toLowerCase();
 
         console.log(" this is in the function - " + playeranswer);
-        console.log(this);
-        if(triviaAnswerLower == playeranswer){
+        if(triviaAnswerLower == playerAnswerLower){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(playername + " was correct with the answer -" + playeranswer + " and got " + points + " points!");
+            axios.postMessage(playername + " was correct with the answer -" + playeranswer + " and got " + triviaPoints + " points!");
+
+            //need to clean variables and change the triva related vars to blank and then update the score keeper. 
+
             //change the question
             this.getQuestion();
-            console.log("after new question");
-            console.log(this);
+
         }
     },
 
     trivaEnd: function(){
-        this.isTriviaOn = false;
+        isTriviaOn = false;
     },
 
     changeQuestion: function(){
