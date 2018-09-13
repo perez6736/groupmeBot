@@ -40,6 +40,9 @@ var triviaGame = {
     readAndCheckAnswer: function(answer, playername){
         // parse answer and store it as the variable answer
         this.playerAnswer = answer;
+
+        console.log(" this is in the function - " + answer);
+
         if(this.playerAnswer == answer){
             //need to reward the player with points
             //show the correct answer
