@@ -70,7 +70,7 @@ function respond(requestBody){
     console.log(text + "  --- " + trivia.isTriviaOn);
     if(text.substring(0,3).toLowerCase() === "/a " && trivia.isTriviaOn){
       console.log(text.substring(3).trim() + name + " -- this is users answer")
-      trivia.triviaAnswer(text.substring(3).trim(), name);
+      trivia.readAndCheckAnswer(text.substring(3).trim(), name);
     }
 
     if(text === "/petey"){
