@@ -28,9 +28,7 @@ var triviaGame = {
             this.triviaPoints = triviainfo[0].value;
             console.log("the variables = ");
             console.log(this.triviaQuestion);
-            console.log(typeof this.triviaQuestion);
             console.log(this.triviaAnswer);
-            console.log(this.triviaPoints);
 
             axios.postMessage(this.triviaQuestion);
         });
@@ -48,7 +46,7 @@ var triviaGame = {
             //show the correct answer
             axios.postMessage(this.triviaAnswer);
             //change the question
-            axios.getQuestion();
+            this.getQuestion();
         }
     },
 
