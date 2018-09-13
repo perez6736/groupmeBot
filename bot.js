@@ -67,6 +67,7 @@ function respond(requestBody){
       console.log("trivia will start");
       trivia.startTrivia();
     }
+    
     if(text.substring(0,3).toLowerCase() === "/a " && trivia.isTriviaOn){
       trivia.readAndCheckAnswer(text.substring(3).trim(), name);
     }

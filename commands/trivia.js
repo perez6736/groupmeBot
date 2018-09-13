@@ -1,7 +1,6 @@
 var axios = require('../axiosFunctions.js');
 
 //i need global variables because i was running into scope issues. 
-var isTriviaOn = false;
 var triviaQuestion = ""
 var triviaAnswer = ""
 var triviaWinner = ""
@@ -12,7 +11,7 @@ var triviaScoreKeeper = {};
 
 //trivia game object. 
 var triviaGame = {
-    //isTriviaOn: false,
+    isTriviaOn: false,
     //triviaQuestion: "",
     //triviaAnswer: "",
     //triviaWinner: "",
