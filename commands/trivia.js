@@ -36,18 +36,23 @@ var triviaGame = {
         
     },
 
-    readAndCheckAnswer: function(answer, playername){
+    readAndCheckAnswer: function(playeranswer, playername){
         // parse answer and store it as the variable answer
-        this.playerAnswer = answer;
+        playeranswer = playeranswer.toLowerCase();
+        this.playerAnswer = playeranswer;
+        var triviaAnswerLower = this.triviaAnswer.toLowerCase();
+        var points = this.triviaPoints
 
         console.log(" this is in the function - " + answer);
         console.log(this);
-        if(this.playerAnswer == answer){
+        if(triviaAnswerLower == answer){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(playername + " was correct with the answer -" + answer);
+            axios.postMessage(playername + " was correct with the answer -" + answer + " and got " + points + " points!");
             //change the question
             this.getQuestion();
+            console.log("after new question");
+            console.log(this);
         }
     },
 
