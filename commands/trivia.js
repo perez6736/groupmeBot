@@ -43,12 +43,12 @@ var triviaGame = {
         var triviaAnswerLower = this.triviaAnswer.toLowerCase();
         var points = this.triviaPoints
 
-        console.log(" this is in the function - " + answer);
+        console.log(" this is in the function - " + playeranswer);
         console.log(this);
-        if(triviaAnswerLower == answer){
+        if(triviaAnswerLower == playeranswer){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(playername + " was correct with the answer -" + answer + " and got " + points + " points!");
+            axios.postMessage(playername + " was correct with the answer -" + playeranswer + " and got " + points + " points!");
             //change the question
             this.getQuestion();
             console.log("after new question");
