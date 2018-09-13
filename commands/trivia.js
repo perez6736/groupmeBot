@@ -16,7 +16,7 @@ var triviaGame = {
         // create axios getrequest to a trivia API to get a question object
         this.getQuestion();
     },
-
+ 
     getQuestion: function(){
         axios.getRandomTrivaQuestion().then(function(triviainfo){
             console.log("question object = ");
@@ -31,6 +31,7 @@ var triviaGame = {
             console.log(this.triviaAnswer);
 
             axios.postMessage(this.triviaQuestion);
+
         });
         
     },
@@ -44,7 +45,7 @@ var triviaGame = {
         if(this.playerAnswer == answer){
             //need to reward the player with points
             //show the correct answer
-            axios.postMessage(this.triviaAnswer);
+            axios.postMessage(playername + " was correct and awarded ");
             //change the question
             this.getQuestion();
         }
