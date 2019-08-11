@@ -27,61 +27,62 @@ function respond(requestBody){
 
   // if the user is not the bot do something 
   if(requestBody.sender_type != "bot"){
+    var lowercaseText = text.toLowerCase();
 
     fkm();
 
-    if (text.includes("venmo")){
+    if (lowercaseText.includes("venmo")){
       venmo()
     }
 
-    if(text.substring(0,7).toLowerCase() === "/google"){
+    if(lowercaseText.substring(0,7) === "/google"){
      googleSearch(text.substring(8));
     }
 
-    if(text.substring(0,5).toLowerCase() === "/coin"){
-      coinFlip(text.substring(5).trim().toLowerCase());
+    if(lowercaseText.substring(0,5) === "/coin"){
+      coinFlip(lowercaseText.substring(5).trim());
     }
 
-    if(text.toLowerCase() === "i love you bot"){
+    if(lowercaseText === "i love you bot"){
       iLoveYouBot(name);
     }
 
-    if(text.substring(0,4).toLowerCase() === "/gif"){
+    if(lowercaseText.substring(0,4) === "/gif"){
       randomGif(text.substring(4).trim());
     }
 
-    if(text.substring(0,9).toLowerCase() === "/cool guy"){
+    if(lowercaseText.substring(0,9) === "/cool guy"){
       coolGuy();
     }
 
-    if(text.substring(0,5).toLowerCase() === "/cilo"){
+    if(lowercaseText.substring(0,5) === "/cilo"){
       threeDiceCiLo();
     }
 
-    if(text.substring(0,6).toLowerCase() === "/nudge"){
+    if(lowercaseText.substring(0,6) === "/nudge"){
       nudge.nudgeEveryone();
     }
 
-    if(text.toLowerCase() === "/trivia quit"){
+    if(lowercaseText === "/trivia quit"){
       // turn the trivia flag to false so the method
       trivia.trivaEnd();
     }
 
-    if(text.substring(0,7).toLowerCase() === "/trivia"){
+    if(lowercaseText.substring(0,7) === "/trivia"){
       console.log("trivia will start");
       trivia.startTrivia();
     }
     
-    if(text.substring(0,3).toLowerCase() === "/a " && trivia.isTriviaOn){
+    if(lowercaseText.substring(0,3) === "/a " && trivia.isTriviaOn){
       trivia.readAndCheckAnswer(text.substring(3).trim(), name);
     }
 
-    if(text === "/macksmemes"){
+    if(lowercaseText === "/macksmemes"){
       petey();
     }
 
 
-    if(text.trim().toLowerCase() === "/help"){
+    if(lowercaseText.trim() === "/help"){
       help();
     }
   }
