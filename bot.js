@@ -13,8 +13,8 @@ var randomGif = require('./commands/randomgif.js');
 var threeDiceCiLo = require('./commands/threedicecilo.js'); 
 var trivia = require('./commands/trivia.js');
 var petey = require('./commands/petey.js');
-
-
+var regex = require('./regex.js');
+var venmo = require('./commands/venmo');
 
 //bot code
 //=============================================================
@@ -29,6 +29,10 @@ function respond(requestBody){
   if(requestBody.sender_type != "bot"){
 
     fkm();
+
+    if (regex.findVenmo(text)){
+      venmo()
+    }
 
     if(text.substring(0,7).toLowerCase() === "/google"){
      googleSearch(text.substring(8));
@@ -88,8 +92,7 @@ function respond(requestBody){
 // - nudge users in group chat. - this was a pain. 
 // - define words 
 // - random fact
-// - weather? forcast.io - darksky 
-// - damon spell checking 
+// - weather? forcast.io - darksky  
 // - reddit posts 
 // - send a text message from groupme - twilio for sms 
 // - trivia game that can keep score in a trivia session. 
