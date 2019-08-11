@@ -72,7 +72,7 @@ function respond(requestBody){
       trivia.readAndCheckAnswer(text.substring(3).trim(), name);
     }
 
-    if(text === "/petey"){
+    if(text === "/macksmemes"){
       petey();
     }
 
