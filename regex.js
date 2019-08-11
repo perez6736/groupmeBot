@@ -8,7 +8,8 @@ var regexObj = {
     // then use the regex to return true or false. 
     findVenmo: function (message){
         var textmessage = message;
-        const regex = new RegExp(/\W*((?i)venmo(?-i))\W/);
+        var word = "venmo"
+        const regex = new RegExp(/\W*((?i) + word + (?-i))\W/);
         if (regex.test(textmessage)){
             return true;
         }

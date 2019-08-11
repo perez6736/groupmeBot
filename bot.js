@@ -30,7 +30,7 @@ function respond(requestBody){
 
     fkm();
 
-    if (regex.findVenmo(text)){
+    if (text.includes("venmo", start)){
       venmo()
     }
 
