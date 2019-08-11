@@ -30,7 +30,7 @@ function respond(requestBody){
 
     fkm();
 
-    if (text.includes("venmo", start)){
+    if (text.includes("venmo")){
       venmo()
     }
 
