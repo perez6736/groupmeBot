@@ -65,6 +65,7 @@ function respond(requestBody){
 
     if(lowercaseText === "/trivia quit"){
       // turn the trivia flag to false so the method
+      console.log("trivia will end");
       trivia.trivaEnd();
     }
 
