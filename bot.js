@@ -13,7 +13,6 @@ var randomGif = require('./commands/randomgif.js');
 var threeDiceCiLo = require('./commands/threedicecilo.js'); 
 var trivia = require('./commands/trivia.js');
 var petey = require('./commands/petey.js');
-var regex = require('./regex.js');
 var venmo = require('./commands/venmo');
 
 //bot code
