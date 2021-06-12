@@ -17,3 +17,5 @@ Some features include
 Things in development 
 - trivia game 
 - translation 
+
+Since my friends stop using group me... i will maybe make a bot on discord. 
