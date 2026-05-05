@@ -1,21 +1,53 @@
 # groupmeBot
 
-A bot that sends messages to groupme channel 
+A bot that sends messages and responds to user input in a GroupMe chat.
 
-I wrote a bot using node.js and express.js. 
-I utlized the axio library to make api calls to various thrid party apis. 
+---
 
-The bot specializes in recognizing certain input from the chat and response to it 
+## Overview
 
-Some features include
-- 3 dice ci-lo game 
-- Gif search 
-- google search 
-- coin flip game 
-- some basic response to certain text 
+This project is a Node.js-based bot that listens to messages in a GroupMe channel and responds based on specific keywords or commands.
 
-Things in development 
-- trivia game 
-- translation 
+The bot integrates with third-party APIs to provide dynamic responses and simple games for group interaction.
 
-Since my friends stop using group me... i will maybe make a bot on discord. 
+---
+
+## Tech Stack
+
+- Node.js
+- Express.js
+- Axios (for API requests)
+
+---
+
+## Features
+
+- 🎲 **3 Dice Cee-lo Game**
+- 🎥 **GIF Search**
+- 🔎 **Google Search**
+- 🪙 **Coin Flip Game**
+- 💬 **Basic keyword-based responses**
+
+---
+
+## How It Works
+
+- The bot listens to incoming messages from GroupMe
+- It checks for specific keywords or patterns
+- Based on the input, it triggers a response or API call
+- Sends a reply back to the GroupMe channel
+
+---
+
+## In Development
+
+- Trivia game
+- Translation feature
+
+---
+
+## Future Plans
+
+GroupMe usage has declined in my circle, so this project may be migrated to a **Discord bot**, expanding functionality and usability.
+
+---
